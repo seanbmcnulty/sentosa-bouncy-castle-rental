@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>White Bouncy Castle Rental Sentosa | Sentosa Bouncy Castle Rental Co</title>
-  <meta name="description" content="Rent an all-white Oxford bounce house with slide and ball pit. Half-day from S$129, full day S$189. Free delivery on Sentosa. Self-setup. Book online." />
+  <meta name="description" content="Rent an all-white Oxford bounce house with slide and ball pit. Full day S$189. Free delivery on Sentosa. Self-setup. Book online." />
   <link rel="icon" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -35,12 +35,12 @@
       <div class="wrap hero-content">
         <p class="eyebrow" style="color:rgb(251 248 242 / 0.8)">Sentosa Island · Kids’ parties</p>
         <h1>The all-white bounce house for Sentosa.</h1>
-        <p class="lede">An Oxford inflatable with bounce area, slide and ball pit. <span data-price="heroPrices"><strong style="color:var(--cream)">Half-day S$129</strong> or <strong style="color:var(--cream)">full day S$189</strong></span>. Free delivery and pickup on Sentosa.</p>
+        <p class="lede">An Oxford inflatable with bounce area, slide and ball pit. <span data-price="heroPrices"><strong style="color:var(--cream)">Full day S$189</strong></span>. Free delivery and pickup on Sentosa.</p>
         <div class="hero-actions">
           <a class="btn btn-cream" href="#book">Book now</a>
           <a class="btn btn-outline light" href="https://wa.me/6582003847?text=Hi%20Yumi%2C%20I%27d%20like%20to%20book%20the%20white%20bouncy%20castle.">WhatsApp</a>
         </div>
-        <p class="fine">CE / KC certified · Easy self-setup · Max 2 rentals per day</p>
+        <p class="fine">CE / KC certified · Easy self-setup · One full-day hire per day</p>
       </div>
     </section>
 
@@ -63,15 +63,11 @@
       <div class="wrap price-grid">
         <div>
           <p class="eyebrow">Pricing</p>
-          <h2>Half-day or full day.</h2>
-          <p style="color:var(--stone);margin-top:1rem;max-width:28rem">Flexible timing within your window. Up to two rentals a day. Free delivery on Sentosa; <span data-price="mainlandDelivery">S$60</span> delivery &amp; pickup elsewhere in Singapore.</p>
+          <h2>Full day hire.</h2>
+          <p style="color:var(--stone);margin-top:1rem;max-width:28rem">One booking per calendar day — simpler for everyone. Free delivery on Sentosa; <span data-price="mainlandDelivery">S$60</span> delivery &amp; pickup elsewhere in Singapore.</p>
         </div>
         <div class="price-card">
-          <div class="price-row">
-            <div class="price-opt">
-              <span>Half day</span>
-              <strong data-price="halfDay">S$129</strong>
-            </div>
+          <div class="price-row" style="grid-template-columns:1fr">
             <div class="price-opt">
               <span>Full day</span>
               <strong data-price="fullDay">S$189</strong>
@@ -144,7 +140,7 @@
           <div class="rule"><h3>Power &amp; space</h3><p>13A power point within reach of the blower, and about 5.5m × 5.5m clear flat ground (3.2m+ ceiling indoors).</p></div>
           <div class="rule"><h3>Weather</h3><p>Do not inflate or use in rain or strong wind. Pack down dry. If returned wet or muddy we may charge a drying/cleaning fee. Weather cancellations: contact us early — we’ll try to rebook; paid fees are otherwise non-refundable unless we cancel.</p></div>
           <div class="rule"><h3>Care &amp; damage</h3><p>No shoes, food, drink, or sharp objects on the castle. Normal wear is fine. Tears, burns, cigarette damage, lost blower, or serious staining may be charged at repair/replacement cost. Soft play balls are <strong>not</strong> included for now — bring your own if you want the pit filled.</p></div>
-          <div class="rule"><h3>Booking &amp; payment</h3><p>PayNow at booking. A slot is held as pending until we confirm payment and availability on WhatsApp. Max two rentals per day. If the date is already full we’ll refund or move you.</p></div>
+          <div class="rule"><h3>Booking &amp; payment</h3><p>Full-day hires only. PayNow at booking. A slot is held as pending until we confirm payment and availability on WhatsApp. One hire per calendar day. If the date is already taken we’ll refund or move you.</p></div>
         </div>
       </div>
     </section>
@@ -154,7 +150,7 @@
         <div class="section-head">
           <p class="eyebrow">Book now</p>
           <h2>Pick a date and book.</h2>
-          <p>Check availability on the calendar (busy = taken; max two rentals per day), choose your date in the form, PayNow, then submit.</p>
+          <p>Check availability on the calendar (busy = taken; one full-day hire per day), choose your date in the form, PayNow, then submit.</p>
         </div>
         <div class="book-grid book-grid-calendar">
           <div class="card" style="padding:0.75rem">
@@ -168,7 +164,7 @@
               <p class="eyebrow">PayNow</p>
               <h3 style="margin-top:0.5rem">Scan to pay</h3>
               <img src="assets/paynow-qr.png" alt="PayNow QR code" />
-              <p style="color:var(--stone);font-size:0.9rem" data-price="paynowLine">Half-day S$129 · Full day S$189<br />+ S$60 if outside Sentosa</p>
+              <p style="color:var(--stone);font-size:0.9rem" data-price="paynowLine">Full day S$189<br />+ S$60 if outside Sentosa</p>
             </div>
 
             <form class="form-grid" id="booking-form" action="https://formsubmit.co/seanbmcnulty@gmail.com" method="POST" enctype="multipart/form-data">
@@ -181,23 +177,16 @@
               <label class="field">Booking date
                 <input required name="eventDate" id="eventDate" type="date" />
               </label>
-              <div class="form-grid two">
-                <label class="field">Package
-                  <select required name="package">
-                    <option value="">Select…</option>
-                    <option data-price-option="half" value="Half day — S$129">Half day — S$129</option>
-                    <option data-price-option="full" value="Full day — S$189">Full day — S$189</option>
-                  </select>
-                </label>
-                <label class="field">Preferred window
-                  <select required name="window">
-                    <option value="">Select…</option>
-                    <option>Morning</option>
-                    <option>Afternoon</option>
-                    <option>Full day / flexible</option>
-                  </select>
-                </label>
-              </div>
+              <input type="hidden" name="package" data-price-option="full" value="Full day — S$189" />
+              <p style="margin:0;color:var(--stone);font-size:0.9rem">Package: <strong data-price="fullDayLabel">Full day — S$189</strong> (full-day hires only)</p>
+              <label class="field">Preferred delivery window
+                <select required name="window">
+                  <option value="">Select…</option>
+                  <option>Morning delivery</option>
+                  <option>Afternoon delivery</option>
+                  <option>Flexible</option>
+                </select>
+              </label>
               <div class="form-grid two">
                 <label class="field">Full name<input required name="fullName" autocomplete="name" /></label>
                 <label class="field">Mobile / WhatsApp<input required name="mobile" type="tel" autocomplete="tel" placeholder="+65 …" /></label>
@@ -243,7 +232,7 @@
   <footer>
     <div class="wrap">
       <strong>Sentosa Bouncy Castle Rental Co</strong><br />
-      <span data-price="footerLine">Half-day S$129 · Full day S$189 · Free Sentosa delivery · S$60 elsewhere · Self-setup</span><br />
+      <span data-price="footerLine">Full day S$189 · Free Sentosa delivery · S$60 elsewhere · Self-setup</span><br />
       WhatsApp <a href="https://wa.me/6582003847">+65 8200 3847</a>
     </div>
   </footer>

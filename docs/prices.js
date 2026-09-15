@@ -12,6 +12,32 @@ window.SBCR_PRICES = {
     return window.SBCR_PRICES.currency + n;
   }
 
+  
+  function track(name, params) {
+    try {
+      if (typeof gtag === "function") gtag("event", name, params || {});
+    } catch (e) {}
+  }
+
+  function wireAnalyticsClicks() {
+    document.querySelectorAll('a[href^="#book"], a.btn[href="#book"]').forEach(function (el) {
+      el.addEventListener("click", function () {
+        track("book_click", { link_text: (el.textContent || "").trim().slice(0, 40) });
+      });
+    });
+    document.querySelectorAll('a[href*="wa.me/6582003847"]').forEach(function (el) {
+      el.addEventListener("click", function () {
+        track("whatsapp_click", { link_url: el.href });
+      });
+    });
+    const form = document.getElementById("booking-form");
+    if (form) {
+      form.addEventListener("submit", function () {
+        track("booking_submit", { currency: "SGD", value: (window.SBCR_PRICES && window.SBCR_PRICES.fullDay) || undefined });
+      });
+    }
+  }
+
   function applyPrices() {
     const p = window.SBCR_PRICES;
     document.querySelectorAll("[data-price]").forEach((el) => {
@@ -106,10 +132,12 @@ window.SBCR_PRICES = {
       applyPrices();
       wireBookingForm();
       setDateMin();
+      wireAnalyticsClicks();
     });
   } else {
     applyPrices();
     wireBookingForm();
     setDateMin();
+    wireAnalyticsClicks();
   }
 })();

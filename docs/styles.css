@@ -114,9 +114,9 @@ input:focus, select:focus, textarea:focus { outline: 2px solid rgb(28 25 22 / 0.
 footer { border-top: 1px solid var(--line); padding: 2.5rem 0 6rem; color: var(--stone); font-size: 0.92rem; }
 footer strong { color: var(--ink); }
 @media (min-width: 700px) {
-  .gallery { grid-template-columns: 1fr 1fr; }
-  .gallery figure:first-child { grid-column: 1 / -1; }
-  .gallery figure:first-child img { min-height: 18rem; }
+  .gallery { grid-template-columns: 1.4fr 1fr; }
+  .gallery figure:first-child { grid-row: span 2; }
+  .gallery figure:first-child img { min-height: 100%; }
   .gallery img { aspect-ratio: 4 / 3; object-fit: cover; }
   .steps { grid-template-columns: repeat(4, 1fr); }
   .specs { grid-template-columns: repeat(3, 1fr); }

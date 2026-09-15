@@ -36,7 +36,7 @@
       <div class="wrap hero-content">
         <p class="eyebrow" style="color:rgb(251 248 242 / 0.8)">Sentosa Island · Kids’ parties</p>
         <h1>The all-white bounce house for Sentosa.</h1>
-        <p class="lede">An Oxford inflatable with bounce area, slide and ball pit. <strong style="color:var(--cream)">Half-day S$179</strong> or <strong style="color:var(--cream)">full day S$249</strong>. Free delivery and pickup on Sentosa.</p>
+        <p class="lede">An Oxford inflatable with bounce area, slide and ball pit. <span data-price="heroPrices"><strong style="color:var(--cream)">Half-day S$179</strong> or <strong style="color:var(--cream)">full day S$249</strong></span>. Free delivery and pickup on Sentosa.</p>
         <div class="hero-actions">
           <a class="btn btn-cream" href="#book">Book now</a>
           <a class="btn btn-outline light" href="https://wa.me/6582003847?text=Hi%20Yumi%2C%20I%27d%20like%20to%20book%20the%20white%20bouncy%20castle.">WhatsApp</a>
@@ -65,17 +65,17 @@
         <div>
           <p class="eyebrow">Pricing</p>
           <h2>Half-day or full day.</h2>
-          <p style="color:var(--stone);margin-top:1rem;max-width:28rem">Flexible timing within your window. Up to two rentals a day. Free delivery on Sentosa; S$80 delivery &amp; pickup elsewhere in Singapore.</p>
+          <p style="color:var(--stone);margin-top:1rem;max-width:28rem">Flexible timing within your window. Up to two rentals a day. Free delivery on Sentosa; <span data-price="mainlandDelivery">S$80</span> delivery &amp; pickup elsewhere in Singapore.</p>
         </div>
         <div class="price-card">
           <div class="price-row">
             <div class="price-opt">
               <span>Half day</span>
-              <strong>S$179</strong>
+              <strong data-price="halfDay">S$179</strong>
             </div>
             <div class="price-opt">
               <span>Full day</span>
-              <strong>S$249</strong>
+              <strong data-price="fullDay">S$249</strong>
             </div>
           </div>
           <p style="color:var(--stone);font-size:0.9rem;margin:0.75rem 0 0">No deposit. You’re billed only if the castle is torn, stained or lost.</p>
@@ -93,7 +93,7 @@
               <ul>
                 <li class="dim">— On-site setup or staffing</li>
                 <li class="dim">— Plastic balls for the pit</li>
-                <li class="dim">— Off-Sentosa delivery (S$80 add-on)</li>
+                <li class="dim">— Off-Sentosa delivery (<span data-price="mainlandDelivery">S$80</span> add-on)</li>
               </ul>
             </div>
           </div>
@@ -147,7 +147,7 @@
         <div class="section-head"><p class="eyebrow">Rules</p><h2>Please note.</h2></div>
         <div class="rules">
           <div class="rule"><h3>Self-setup</h3><p>We deliver and pick up only. You inflate and pack down.</p></div>
-          <div class="rule"><h3>Delivery</h3><p>Free on Sentosa. S$80 delivery &amp; pickup for the rest of Singapore.</p></div>
+          <div class="rule"><h3>Delivery</h3><p>Free on Sentosa. <span data-price="mainlandDelivery">S$80</span> delivery &amp; pickup for the rest of Singapore.</p></div>
           <div class="rule"><h3>Power &amp; space</h3><p>13A power point and about 5.5m × 5.5m clear flat ground.</p></div>
         </div>
       </div>
@@ -165,7 +165,7 @@
             <p class="eyebrow">PayNow</p>
             <h3 style="margin-top:0.5rem">Scan to pay</h3>
             <img src="assets/paynow-qr.png" alt="PayNow QR code" />
-            <p style="color:var(--stone);font-size:0.9rem">Half-day S$179 · Full day S$249<br />+ S$80 if outside Sentosa</p>
+            <p style="color:var(--stone);font-size:0.9rem" data-price="paynowLine">Half-day S$179 · Full day S$249<br />+ S$80 if outside Sentosa</p>
             <a class="btn btn-outline" style="margin-top:0.75rem" href="https://wa.me/6582003847?text=Hi%20Yumi%2C%20I%20submitted%20a%20booking%20and%20paid%20via%20PayNow.">WhatsApp Yumi</a>
           </div>
 
@@ -187,8 +187,8 @@
                 <label class="field">Package
                   <select required name="package">
                     <option value="">Select…</option>
-                    <option value="Half day — S$179">Half day — S$179</option>
-                    <option value="Full day — S$249">Full day — S$249</option>
+                    <option data-price-option="half" value="Half day — S$179">Half day — S$179</option>
+                    <option data-price-option="full" value="Full day — S$249">Full day — S$249</option>
                   </select>
                 </label>
               </div>
@@ -205,7 +205,7 @@
                   <select required name="location">
                     <option value="">Select…</option>
                     <option value="Sentosa — free delivery">Sentosa — free delivery</option>
-                    <option value="Elsewhere in Singapore — +S$80">Elsewhere in Singapore — +S$80</option>
+                    <option data-price-option="off" value="Elsewhere in Singapore — +S$80">Elsewhere in Singapore — +S$80</option>
                   </select>
                 </label>
               </div>
@@ -243,7 +243,7 @@
   <footer>
     <div class="wrap">
       <strong>Sentosa Bouncy Castle Rental Co</strong><br />
-      Half-day S$179 · Full day S$249 · Free Sentosa delivery · S$80 elsewhere · Self-setup<br />
+      <span data-price="footerLine">Half-day S$179 · Full day S$249 · Free Sentosa delivery · S$80 elsewhere · Self-setup</span><br />
       WhatsApp <a href="https://wa.me/6582003847">+65 8200 3847</a>
     </div>
   </footer>
@@ -262,5 +262,6 @@
       location.hash = 'book';
     }
   </script>
+  <script src="prices.js"></script>
 </body>
 </html>

@@ -2,8 +2,8 @@
 window.SBCR_PRICES = {
   fullDay: 189,
   mainlandDelivery: 60,
-  currency: "S$",
-  updatedAt: "2026-09-15T03:31",
+  currency: "$",
+  updatedAt: "2026-09-15T03:57",
   note: "Full-day only. Internal yield may change fullDay; never publish a rate matrix."
 };
 

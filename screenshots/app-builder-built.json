@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "White Bouncy Castle Rental Sentosa | Sentosa Bouncy Castle Rental Co",
+      "hasCanvas": false,
+      "bodyTextLen": 4821,
+      "bodyTextHash": "e6f69b9b3ab3ce6da0e16c3b2ecdf0ca46935669d1952f4dedf57cdb3f7a19a4",
+      "bodyTextPrefix": "Sentosa Bouncy Castle Gallery Pricing How it works Rules Book no",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "White Bouncy Castle Rental Sentosa | Sentosa Bouncy Castle Rental Co",
+      "hasCanvas": false,
+      "bodyTextLen": 4804,
+      "bodyTextHash": "ef3451dfbe26effaeeb876a6b672d4f3d4deb8bdaa4a024d5495bb9e279c569e",
+      "bodyTextPrefix": "Sentosa Bouncy Castle Book now SENTOSA ISLAND · KIDS’ PARTIES Th",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

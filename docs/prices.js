@@ -75,7 +75,7 @@ window.SBCR_PRICES = {
       "Venue type: " + get("venueType"),
       get("notes") ? "Notes: " + get("notes") : null,
       "",
-      "Confirms: self-setup, power point, PayNow, calendar checked.",
+      "Confirms: self-setup, power point, PayNow, calendar checked, Rules accepted (no balls included).",
       "Please confirm availability and payment.",
     ].filter((x) => x !== null);
     return lines.join("\n");

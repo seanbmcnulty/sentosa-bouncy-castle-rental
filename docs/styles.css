@@ -120,7 +120,7 @@ footer strong { color: var(--ink); }
   .gallery img { aspect-ratio: 4 / 3; object-fit: cover; }
   .steps { grid-template-columns: repeat(4, 1fr); }
   .specs { grid-template-columns: repeat(3, 1fr); }
-  .rules { grid-template-columns: repeat(3, 1fr); }
+  .rules { grid-template-columns: repeat(2, 1fr); }
   .form-grid.two { grid-template-columns: 1fr 1fr; }
   .checks { grid-template-columns: 1fr 1fr; }
 }

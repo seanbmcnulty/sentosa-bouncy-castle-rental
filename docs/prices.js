@@ -3,7 +3,7 @@ window.SBCR_PRICES = {
   fullDay: 189,
   mainlandDelivery: 60,
   currency: "$",
-  updatedAt: "2026-09-15T03:57",
+  updatedAt: "2026-09-15T03:58",
   note: "Full-day only. Internal yield may change fullDay; never publish a rate matrix."
 };
 
@@ -93,13 +93,23 @@ window.SBCR_PRICES = {
     });
   }
 
+  function setDateMin() {
+    const d = document.getElementById("eventDate");
+    if (!d) return;
+    const t = new Date();
+    const iso = t.toLocaleDateString("en-CA", { timeZone: "Asia/Singapore" });
+    d.min = iso;
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       applyPrices();
       wireBookingForm();
+      setDateMin();
     });
   } else {
     applyPrices();
     wireBookingForm();
+    setDateMin();
   }
 })();

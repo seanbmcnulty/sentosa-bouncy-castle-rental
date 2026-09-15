@@ -98,11 +98,32 @@ label.field { display: grid; gap: 0.35rem; font-size: 0.9rem; font-weight: 500; 
 input, select, textarea {
   height: 2.75rem; border-radius: 0.5rem; border: 1px solid var(--line);
   background: var(--cream); padding: 0 0.75rem; font: inherit; color: var(--ink);
+  width: 100%;
+  max-width: 100%;
 }
 textarea { height: auto; min-height: 5.5rem; padding: 0.7rem 0.75rem; resize: vertical; }
+input[type="file"] { height: auto; padding: 0.55rem 0.75rem; }
+input[type="checkbox"] { width: auto; height: auto; max-width: none; }
 input:focus, select:focus, textarea:focus { outline: 2px solid rgb(28 25 22 / 0.15); border-color: rgb(28 25 22 / 0.3); }
-.checkboxes { display: grid; gap: 0.55rem; }
-.checkboxes label { display: flex; gap: 0.55rem; align-items: flex-start; font-weight: 400; color: var(--stone); font-size: 0.9rem; }
+.checkboxes { display: grid; gap: 0.75rem; }
+.checkboxes label {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  column-gap: 0.7rem;
+  align-items: start;
+  font-weight: 400;
+  color: var(--stone);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.checkboxes input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0.15rem 0 0;
+  flex-shrink: 0;
+  accent-color: var(--charcoal);
+}
+.checkboxes label a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
 .mobile-dock {
   position: fixed; inset-inline: 0; bottom: 0; z-index: 40;
   border-top: 1px solid var(--line); background: rgb(244 240 232 / 0.95);
@@ -136,3 +157,21 @@ footer strong { color: var(--ink); }
   .book-grid-calendar { grid-template-columns: 1.05fr 0.95fr; }
 }
 #eventDate { font-size: 1.05rem; font-weight: 600; }
+
+/* Mobile polish */
+@media (max-width: 699px) {
+  .wrap { width: min(var(--max), calc(100% - 1.5rem)); }
+  section { padding: 3.25rem 0; }
+  .hero-content { padding: 6rem 0 4.5rem; }
+  .hero h1 { max-width: 12ch; }
+  .calendar-frame { min-height: 22rem; }
+  .book-grid .card .calendar-frame { min-height: 22rem; }
+  .price-card { padding: 1.25rem; }
+  .nav-inner { height: 3.75rem; }
+  .brand span { font-size: 1.05rem; }
+  .btn { height: 2.75rem; padding: 0 1rem; font-size: 0.9rem; }
+  footer { padding-bottom: 5.5rem; }
+}
+@media (min-width: 700px) and (max-width: 899px) {
+  .steps { grid-template-columns: 1fr 1fr; }
+}

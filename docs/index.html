@@ -22,7 +22,6 @@
         <a href="#gallery">Gallery</a>
         <a href="#pricing">Pricing</a>
         <a href="#how">How it works</a>
-        <a href="#availability">Availability</a>
         <a href="#rules">Rules</a>
       </nav>
       <a class="btn" href="#book">Book now</a>
@@ -131,18 +130,7 @@
       </div>
     </section>
 
-    <section id="availability">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Availability</p>
-          <h2>Check open dates.</h2>
-          <p>Busy = booked. Max two rentals per day (e.g. morning + afternoon).</p>
-        </div>
-        <iframe class="calendar-frame" title="Availability calendar" loading="lazy" src="https://calendar.google.com/calendar/embed?src=6f530f5c61bd78e815a209147e8de2b76328ae3598300e6ffe77d2d38eb330bf%40group.calendar.google.com&amp;ctz=Asia%2FSingapore"></iframe>
-      </div>
-    </section>
-
-    <section id="rules">
+<section id="rules">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Rules</p><h2>Please note.</h2></div>
         <div class="rules">
@@ -157,33 +145,35 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">Book now</p>
-          <h2>Request your date.</h2>
-          <p>Submit the form, PayNow the total for your package, then we’ll confirm on WhatsApp.</p>
+          <h2>Pick a date and book.</h2>
+          <p>Check availability on the calendar (busy = taken; max two rentals per day), choose your date in the form, PayNow, then submit.</p>
         </div>
-        <div class="book-grid">
-          <div class="card paynow">
-            <p class="eyebrow">PayNow</p>
-            <h3 style="margin-top:0.5rem">Scan to pay</h3>
-            <img src="assets/paynow-qr.png" alt="PayNow QR code" />
-            <p style="color:var(--stone);font-size:0.9rem" data-price="paynowLine">Half-day S$179 · Full day S$249<br />+ S$80 if outside Sentosa</p>
-            <a class="btn btn-outline" style="margin-top:0.75rem" href="https://wa.me/6582003847?text=Hi%20Yumi%2C%20I%20submitted%20a%20booking%20and%20paid%20via%20PayNow.">WhatsApp Yumi</a>
+        <div class="book-grid book-grid-calendar">
+          <div class="card" style="padding:0.75rem">
+            <p class="eyebrow" style="padding:0.5rem 0.5rem 0">Availability</p>
+            <iframe class="calendar-frame" style="min-height:28rem;box-shadow:none;border-radius:0.5rem" title="Availability calendar" loading="lazy" src="https://calendar.google.com/calendar/embed?src=6f530f5c61bd78e815a209147e8de2b76328ae3598300e6ffe77d2d38eb330bf%40group.calendar.google.com&amp;ctz=Asia%2FSingapore&amp;mode=MONTH&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0"></iframe>
+            <p style="color:var(--stone);font-size:0.85rem;padding:0.5rem 0.75rem 0.75rem;margin:0">Tap a free date, then enter the same date in the form.</p>
           </div>
 
           <div class="card">
-            <form class="form-grid" action="https://formsubmit.co/seanbmcnulty@gmail.com" method="POST" enctype="multipart/form-data">
+            <div class="paynow" style="margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--line)">
+              <p class="eyebrow">PayNow</p>
+              <h3 style="margin-top:0.5rem">Scan to pay</h3>
+              <img src="assets/paynow-qr.png" alt="PayNow QR code" />
+              <p style="color:var(--stone);font-size:0.9rem" data-price="paynowLine">Half-day S$179 · Full day S$249<br />+ S$80 if outside Sentosa</p>
+            </div>
+
+            <form class="form-grid" id="booking-form" action="https://formsubmit.co/seanbmcnulty@gmail.com" method="POST" enctype="multipart/form-data">
               <input type="hidden" name="_subject" value="New Sentosa Bouncy Castle booking" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_next" value="https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#book-thanks" />
               <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
+              <label class="field">Booking date
+                <input required name="eventDate" id="eventDate" type="date" />
+              </label>
               <div class="form-grid two">
-                <label class="field">Full name<input required name="fullName" autocomplete="name" /></label>
-                <label class="field">Mobile / WhatsApp<input required name="mobile" type="tel" autocomplete="tel" placeholder="+65 …" /></label>
-              </div>
-              <label class="field">Email<input required name="email" type="email" autocomplete="email" /></label>
-              <div class="form-grid two">
-                <label class="field">Event date<input required name="eventDate" type="date" /></label>
                 <label class="field">Package
                   <select required name="package">
                     <option value="">Select…</option>
@@ -191,8 +181,6 @@
                     <option data-price-option="full" value="Full day — S$249">Full day — S$249</option>
                   </select>
                 </label>
-              </div>
-              <div class="form-grid two">
                 <label class="field">Preferred window
                   <select required name="window">
                     <option value="">Select…</option>
@@ -201,20 +189,21 @@
                     <option>Full day / flexible</option>
                   </select>
                 </label>
-                <label class="field">Location
-                  <select required name="location">
-                    <option value="">Select…</option>
-                    <option value="Sentosa — free delivery">Sentosa — free delivery</option>
-                    <option data-price-option="off" value="Elsewhere in Singapore — +S$80">Elsewhere in Singapore — +S$80</option>
-                  </select>
-                </label>
               </div>
+              <div class="form-grid two">
+                <label class="field">Full name<input required name="fullName" autocomplete="name" /></label>
+                <label class="field">Mobile / WhatsApp<input required name="mobile" type="tel" autocomplete="tel" placeholder="+65 …" /></label>
+              </div>
+              <label class="field">Email<input required name="email" type="email" autocomplete="email" /></label>
+              <label class="field">Location
+                <select required name="location">
+                  <option value="">Select…</option>
+                  <option value="Sentosa — free delivery">Sentosa — free delivery</option>
+                  <option data-price-option="off" value="Elsewhere in Singapore — +S$80">Elsewhere in Singapore — +S$80</option>
+                </select>
+              </label>
               <label class="field">Venue name (condo / hotel / home)<input name="venueName" /></label>
               <label class="field">Delivery address<textarea required name="address" rows="2"></textarea></label>
-              <div class="form-grid two">
-                <label class="field">Approx. clear space<input name="clearSpace" placeholder="e.g. 6m × 6m lawn" /></label>
-                <label class="field">Approx. number of kids<input name="kidsCount" type="number" min="1" /></label>
-              </div>
               <label class="field">Venue type
                 <select name="venueType">
                   <option>Home / condo</option>
@@ -228,12 +217,14 @@
                 <label><input required type="checkbox" name="confirmSelfSetup" value="yes" /> I will set up and pack down myself</label>
                 <label><input required type="checkbox" name="confirmPower" value="yes" /> I have a nearby power point for the blower</label>
                 <label><input required type="checkbox" name="confirmPay" value="yes" /> I will PayNow the package total (and delivery fee if off Sentosa)</label>
+                <label><input required type="checkbox" name="confirmDateFree" value="yes" /> I checked the calendar — this date/window looks free</label>
               </div>
 
-              <button class="btn full" type="submit">Submit booking</button>
-              <p style="margin:0;color:var(--stone);font-size:0.85rem">You’ll get a confirmation email path via FormSubmit the first time (one-time activate). We also follow up on WhatsApp at +65 8200 3847.</p>
+              <button class="btn full" type="submit">Book this date</button>
+              <p style="margin:0;color:var(--stone);font-size:0.85rem">We’ll confirm on WhatsApp (+65 8200 3847) after payment. First FormSubmit email may need a one-time activate click.</p>
             </form>
-            <div id="book-thanks" style="display:none;margin-top:1rem;padding:1rem;border-radius:0.75rem;background:var(--paper);color:var(--ok);font-weight:600">Thanks — booking received. We’ll confirm on WhatsApp shortly.</div>
+            <div id="book-thanks" style="display:none;margin-top:1rem;padding:1rem;border-radius:0.75rem;background:var(--paper);color:var(--ok);font-weight:600">Thanks — booking received for your chosen date. We’ll confirm on WhatsApp shortly.</div>
+            <p style="margin-top:1rem"><a class="btn btn-outline" href="https://wa.me/6582003847?text=Hi%20Yumi%2C%20I%20submitted%20a%20booking%20for%20a%20specific%20date%20and%20paid%20via%20PayNow.">WhatsApp Yumi</a></p>
           </div>
         </div>
       </div>

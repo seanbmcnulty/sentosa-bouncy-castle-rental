@@ -130,3 +130,8 @@ footer strong { color: var(--ink); }
   .mobile-dock { display: none; }
   footer { padding-bottom: 3rem; }
 }
+
+@media (min-width: 900px) {
+  .book-grid-calendar { grid-template-columns: 1.05fr 0.95fr; }
+}
+#eventDate { font-size: 1.05rem; font-weight: 600; }

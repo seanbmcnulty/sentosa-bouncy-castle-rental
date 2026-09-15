@@ -16,7 +16,7 @@ export const SITE = {
 
   seoTitle: "White Bouncy Castle Rental Sentosa | Sentosa Bouncy Castle Rental Co",
   seoDescription:
-    "Rent an all-white Oxford bounce house with slide on Sentosa Island. S$249 a day, free delivery and pickup. You set up — we collect. For kids’ birthdays, condos and hotel functions.",
+    "Rent an all-white Oxford bounce house with slide and ball pit on Sentosa Island. S$249 a day, free delivery and pickup. Easy self-setup. For kids’ birthdays, condos and hotel functions.",
 
   whatsappDisplay: "+65 XXXX XXXX",
   whatsappE164: "",
@@ -26,8 +26,11 @@ export const SITE = {
   priceSgd: 249,
   damageNote: "No deposit. You’re billed only if the castle is torn, stained or lost.",
 
-  size: "approximately 4m × 4.5m × 3m (L × W × H)",
-  sizeShort: "4m × 4.5m × 3m",
+  size: "4.3m × 4.5m × 3.0m (14 ft × 14.9 ft × 10 ft)",
+  sizeShort: "4.3m × 4.5m × 3.0m",
+  bounceArea: "2.96m × 2.44m (9.7 ft × 8 ft)",
+  ballPit: "4.3m × 1.3m (14 ft × 4.3 ft) — plastic balls not included",
+  clearSpace: "about 5.5m × 5.5m of reasonably flat ground; 3.2m+ ceiling if indoors",
   material: "All-white Oxford inflatable",
 
   deliveryWindows: [
@@ -44,30 +47,30 @@ export const SITE = {
 
 export const PHOTOS = {
   hero: {
-    src: "/images/hero.jpg",
-    alt: "All-white bounce house with slide on a tropical Sentosa villa lawn at golden hour",
-    caption: "Placeholder — swap /public/images/hero.jpg with a real party photo.",
+    src: "/images/hero.jpg?v=3",
+    alt: "All-white bounce house with slide, ball pit and gold balloon garland on turf at dusk",
+    caption: "",
   },
   gallery: [
     {
-      src: "/images/gallery-entrance.jpg",
-      alt: "Arched entrance of the all-white bounce house in a tropical garden",
-      caption: "Placeholder — swap gallery-entrance.jpg",
+      src: "/images/gallery-entrance.jpg?v=3",
+      alt: "Front view of the all-white bounce house with slide and ball pit",
+      caption: "",
     },
     {
-      src: "/images/gallery-courtyard.jpg",
-      alt: "All-white bounce house with slide in a luxury condominium courtyard",
-      caption: "Placeholder — swap gallery-courtyard.jpg",
+      src: "/images/gallery-courtyard.jpg?v=3",
+      alt: "Studio view of the white bounce house with pastel balloons, slide and ball pit",
+      caption: "",
     },
     {
-      src: "/images/gallery-slide.jpg",
-      alt: "Close-up of the white inflatable slide",
-      caption: "Placeholder — swap gallery-slide.jpg",
+      src: "/images/gallery-slide.jpg?v=3",
+      alt: "White inflatable slide and front ball pit",
+      caption: "",
     },
     {
-      src: "/images/gallery-dusk.jpg",
-      alt: "All-white bounce house on a hotel lawn at dusk",
-      caption: "Placeholder — swap gallery-dusk.jpg",
+      src: "/images/gallery-dusk.jpg?v=3",
+      alt: "Children playing in the all-white bounce house with slide and ball pit",
+      caption: "",
     },
   ],
 } as const;

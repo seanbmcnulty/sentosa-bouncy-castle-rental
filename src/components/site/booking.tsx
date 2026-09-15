@@ -257,7 +257,7 @@ export function Booking() {
                   />
                   <CheckRow
                     name="selfSetup"
-                    label="I will set up and pack down the castle myself. You only deliver and collect."
+                    label="I’ll take care of inflating and packing down — you deliver and collect."
                   />
                   <CheckRow
                     name="powerPoint"
@@ -288,9 +288,9 @@ export function Booking() {
             <ul className="mt-4 space-y-3 text-sm leading-relaxed text-stone">
               <li>S${SITE.priceSgd} per day</li>
               <li>Free delivery & pickup on Sentosa only</li>
-              <li>You inflate, supervise, and pack down</li>
+              <li>Easy self-setup · blower included</li>
               <li>Blower included · power point required</li>
-              <li>{SITE.sizeShort}</li>
+              <li>{SITE.sizeShort} · bounce, slide, ball pit</li>
               <li>{SITE.damageNote}</li>
             </ul>
             <div className="mt-6">

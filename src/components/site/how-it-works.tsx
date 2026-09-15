@@ -7,17 +7,17 @@ const STEPS = [
   {
     n: "02",
     title: "We deliver",
-    body: "We drop the packed castle and blower at your condo or hotel on Sentosa. That’s our job.",
+    body: "We drop the packed castle and blower at your condo or hotel on Sentosa.",
   },
   {
     n: "03",
-    title: "You inflate & enjoy",
-    body: "Plug in a nearby power point, inflate, and host. Adult supervision is on you for the whole booking.",
+    title: "Inflate & enjoy",
+    body: "Plug in a nearby power point and inflate — it takes a few minutes. An adult should supervise while it’s up.",
   },
   {
     n: "04",
     title: "We collect",
-    body: "You pack it down dry. We pick up the same evening or the next morning — your choice.",
+    body: "Pack it down dry when you’re done. We pick up the same evening or the next morning.",
   },
 ];
 
@@ -29,11 +29,11 @@ export function HowItWorks() {
           How it works
         </p>
         <h2 className="mt-3 max-w-xl font-serif text-4xl font-medium tracking-tight sm:text-5xl">
-          Four steps. You do the middle.
+          Four simple steps.
         </h2>
         <p className="mt-4 max-w-xl text-base leading-relaxed text-stone">
-          We do not set up, inflate, staff, or pack down the castle. If that
-          isn’t the arrangement you want, we aren’t the right rental.
+          We bring it to you, you host the party, we take it away. Inflation
+          and pack-down are straightforward — blower included.
         </p>
 
         <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl bg-line shadow-soft sm:grid-cols-2 lg:grid-cols-4">

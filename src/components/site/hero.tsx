@@ -27,9 +27,9 @@ export function Hero() {
               The all-white bounce house for Sentosa.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
-              An Oxford inflatable with slide.{" "}
+              An Oxford inflatable with bounce area, slide and ball pit.{" "}
               <span className="text-cream">S${SITE.priceSgd} a day</span>, free
-              delivery and pickup on Sentosa Island. You inflate it. We collect it.
+              delivery and pickup on Sentosa Island.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
@@ -41,7 +41,7 @@ export function Hero() {
               <WhatsAppLink variant="outline" size="lg" className="h-12 border-cream/30 text-cream hover:bg-cream/10 hover:border-cream/50" />
             </div>
             <p className="mt-6 text-sm text-cream/75">
-              CE / KC certified · We deliver and pick up only — you set up and pack down
+              CE / KC certified · Easy self-setup · Sentosa delivery and pickup
             </p>
           </div>
         </div>

@@ -4,15 +4,16 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const included = [
-  "All-white Oxford bounce house with slide",
+  "All-white Oxford bounce house, slide and ball pit",
   "Electric blower",
   "Free delivery on Sentosa Island",
   "Free pickup on Sentosa Island",
 ];
 
 const notIncluded = [
-  "Setup or pack-down — that’s you",
+  "On-site setup or staffing",
   "Staffing or on-site supervision",
+  "Plastic balls for the pit",
   "Islandwide or mainland delivery",
 ];
 

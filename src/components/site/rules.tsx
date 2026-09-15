@@ -4,16 +4,16 @@ const RULES = [
     body: "Free delivery and pickup are for Sentosa Island only. We do not offer islandwide free delivery.",
   },
   {
-    title: "Self-setup",
-    body: "We deliver and pick up. You inflate, supervise, and pack down. We do not set up or staff the castle.",
+    title: "Easy self-setup",
+    body: "We deliver and pick up. Inflation takes a few minutes with the blower included; pack-down is just as simple. We don’t stay on site.",
   },
   {
     title: "Power point",
-    body: "The blower needs a nearby 13A power point for the whole booking. No power, no bounce.",
+    body: "Please have a nearby 13A power point ready for the blower for the whole booking.",
   },
   {
     title: "Clear space",
-    body: `You need a reasonably flat, clear area larger than ${"4m × 4.5m"} — lawn, function deck, or indoor hall with ceiling height to spare.`,
+    body: "You need about 5.5m × 5.5m of reasonably flat ground — the castle is 4.3m × 4.5m including the ball pit — and 3.2m+ ceiling if indoors.",
   },
   {
     title: "Damage",
@@ -21,7 +21,7 @@ const RULES = [
   },
   {
     title: "Supervision",
-    body: "An adult must supervise children the entire time the castle is inflated. This is not a staffed attraction.",
+    body: "Please have an adult supervising children whenever the castle is inflated.",
   },
 ];
 
@@ -33,7 +33,7 @@ export function Rules() {
           Fine print
         </p>
         <h2 className="mt-3 max-w-xl font-serif text-4xl font-medium tracking-tight sm:text-5xl">
-          Please read this before you book.
+          A few practical notes.
         </h2>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -12,8 +12,8 @@ export function Footer() {
             <p className="font-serif text-xl font-medium">{SITE.name}</p>
           </div>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-stone">
-            All-white bounce house rental for Sentosa Island. S${SITE.priceSgd} a
-            day. We deliver and collect — you set up and pack down.
+            All-white bounce house with slide and ball pit, Sentosa Island. S$
+            {SITE.priceSgd} a day, free delivery and pickup.
           </p>
         </div>
         <div className="text-sm text-stone">
@@ -39,11 +39,11 @@ export function Footer() {
       </div>
       <div className="border-t border-line">
         <p className="mx-auto max-w-6xl px-5 py-6 text-xs leading-relaxed text-mist sm:px-8">
-          {SITE.name} delivers and collects on Sentosa Island only. Customers are
-          responsible for setup, pack-down, adult supervision, and a nearby power
-          point. Bookings are confirmed after we review your enquiry. CE / KC
-          certified equipment. No damage deposit — you’re billed only if the
-          castle is torn, stained or lost.
+          {SITE.name} delivers and collects on Sentosa Island only. Easy
+          self-setup with the blower included; please supervise children and
+          have a nearby power point ready. Bookings are confirmed after we
+          review your enquiry. CE / KC certified equipment. No damage deposit —
+          you’re billed only if the castle is torn, stained or lost.
           {isWhatsAppReady() ? "" : " WhatsApp number not yet connected."}
         </p>
       </div>

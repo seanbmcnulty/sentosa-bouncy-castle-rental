@@ -27,10 +27,8 @@ export function Gallery() {
             Quiet white. Made for lawns and function rooms.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-stone">
-            All-white Oxford inflatable with slide — not a carnival. The photos
-            below are style placeholders; swap the files in{" "}
-            <span className="text-ink">/public/images/</span> for real party
-            shots when you have them.
+            All-white Oxford inflatable with bounce area, slide and front ball
+            pit. Same castle we deliver. Balloons are styling — not included.
           </p>
         </div>
 
@@ -53,9 +51,11 @@ export function Gallery() {
                 alt={photo.alt}
                 className="img-frame size-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
               />
+              {photo.caption ? (
               <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/50 to-transparent p-4 pt-10 text-xs text-cream opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100">
                 {photo.caption}
               </span>
+              ) : null}
             </button>
           ))}
         </div>

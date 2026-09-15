@@ -1,13 +1,17 @@
 import { SITE } from "@/lib/site";
 
 const ROWS = [
-  { label: "Size", value: SITE.size },
+  { label: "Overall size", value: SITE.size },
+  { label: "Bounce area", value: SITE.bounceArea },
+  { label: "Ball pit", value: SITE.ballPit },
+  { label: "Slide", value: "Attached side slide, about 1.0 m (3.2 ft)" },
   { label: "Material", value: SITE.material },
-  { label: "Layout", value: "Bounce house with attached slide" },
+  { label: "Layout", value: "Bounce house + slide + ball pit (3-in-1)" },
+  { label: "Clear space", value: SITE.clearSpace },
   { label: "Power", value: "Blower included. Nearby 13A power point required." },
-  { label: "Setup", value: "Self-setup and self pack-down. We do not inflate or staff." },
+  { label: "Setup", value: "Easy self-setup — we deliver and collect. Inflation takes a few minutes with the blower included." },
   { label: "Safety", value: "CE / KC certified. Suitable for kids’ parties with adult supervision." },
-  { label: "Best for", value: "Birthdays, condo functions, hotel events on Sentosa." },
+  { label: "Best for", value: "Birthdays, condo functions, hotel events on Sentosa. Outdoor lawns preferred; indoor only with 3.2 m+ ceiling." },
   { label: "Where we go", value: "Sentosa Island only for free delivery and pickup." },
 ];
 

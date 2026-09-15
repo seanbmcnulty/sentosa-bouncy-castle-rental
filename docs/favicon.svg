@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sentosa Bouncy Castle">
+  <rect width="64" height="64" rx="12" fill="#F4F0E8"/>
+  <path
+    fill="#FFFFFF"
+    stroke="#2A261F"
+    stroke-width="3"
+    stroke-linejoin="miter"
+    stroke-miterlimit="2"
+    d="M16 50 L16 16 L24 16 L24 24 L28 24 L28 16 L36 16 L36 24 L40 24 L40 16 L48 16 L48 50 L40 50 L40 38 A8 8 0 0 0 24 38 L24 50 Z"
+  />
+</svg>

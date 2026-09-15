@@ -156,7 +156,9 @@ input:focus, select:focus, textarea:focus { outline: 2px solid rgb(28 25 22 / 0.
 .calendar-wrap {
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   border-radius: 0.5rem;
 }
 .calendar-frame {
@@ -213,7 +215,8 @@ footer strong { color: var(--ink); }
   section { padding: 3.25rem 0; }
   .hero-content { padding: 6rem 0 4.5rem; }
   .hero h1 { max-width: 12ch; }
-  .calendar-frame { min-height: 24rem; }
+  .calendar-frame { min-height: 26rem; min-width: 32rem; }
+  .calendar-wrap { margin-inline: -0.25rem; }
   .price-card { padding: 1.25rem; }
   .nav-inner { height: 3.75rem; }
   .brand span { font-size: 1.05rem; }

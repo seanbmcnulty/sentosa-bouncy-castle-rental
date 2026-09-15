@@ -223,9 +223,9 @@
           <div class="card" style="padding:0.75rem">
             <p class="eyebrow" style="padding:0.5rem 0.5rem 0">Availability</p>
             <div class="calendar-wrap">
-              <iframe class="calendar-frame" id="avail-calendar" title="Availability calendar" loading="lazy" src="https://calendar.google.com/calendar/embed?src=6f530f5c61bd78e815a209147e8de2b76328ae3598300e6ffe77d2d38eb330bf%40group.calendar.google.com&amp;ctz=Asia%2FSingapore&amp;mode=AGENDA&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0"></iframe>
+              <iframe class="calendar-frame" id="avail-calendar" title="Availability calendar" loading="lazy" src="https://calendar.google.com/calendar/embed?src=6f530f5c61bd78e815a209147e8de2b76328ae3598300e6ffe77d2d38eb330bf%40group.calendar.google.com&amp;ctz=Asia%2FSingapore&amp;mode=WEEK&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0"></iframe>
             </div>
-            <p style="color:var(--stone);font-size:0.85rem;padding:0.5rem 0.75rem 0.75rem;margin:0">Check free/busy here, then enter the same date in the form. On phones this shows as a list; on desktop it switches to month view.</p>
+            <p style="color:var(--stone);font-size:0.85rem;padding:0.5rem 0.75rem 0.75rem;margin:0">Check free/busy here, then enter the same date in the form. Swipe sideways on the calendar if you need more days.</p>
           </div>
 
           <div class="card">
@@ -327,9 +327,10 @@
     (function () {
       var frame = document.getElementById("avail-calendar");
       if (!frame) return;
-      var base = "https://calendar.google.com/calendar/embed?src=6f530f5c61bd78e815a209147e8de2b76328ae3598300e6ffe77d2d38eb330bf%40group.calendar.google.com&ctz=Asia%2FSingapore&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=";
+      var base = "https://calendar.google.com/calendar/embed?src=6f530f5c61bd78e815a209147e8de2b76328ae3598300e6ffe77d2d38eb330bf%40group.calendar.google.com&ctz=Asia%2FSingapore&showTitle=0&showPrint=0&showTabs=1&showCalendars=0&mode=";
       function sync() {
-        var mode = window.matchMedia("(min-width: 700px)").matches ? "MONTH" : "AGENDA";
+        // Phones: WEEK grid; desktop: MONTH. Tabs stay on so users can switch.
+        var mode = window.matchMedia("(min-width: 700px)").matches ? "MONTH" : "WEEK";
         var next = base + mode;
         if (frame.getAttribute("src") !== next) frame.setAttribute("src", next);
       }

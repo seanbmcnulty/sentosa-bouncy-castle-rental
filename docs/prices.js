@@ -1,10 +1,10 @@
 /** Live list prices — edit here; site reads these everywhere. Managed by pricing assistant. */
 window.SBCR_PRICES = {
-  halfDay: 179,
-  fullDay: 249,
-  mainlandDelivery: 80,
+  halfDay: 129,
+  fullDay: 189,
+  mainlandDelivery: 60,
   currency: "S$",
-  updatedAt: "2026-09-15",
+  updatedAt: "2026-09-15T01:11",
   note: "Internal yield may change these; never publish a rate matrix."
 };
 

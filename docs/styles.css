@@ -45,19 +45,6 @@ header.nav {
 .brand { display: flex; align-items: center; gap: 0.65rem; min-width: 0; }
 .brand svg { width: 1.75rem; height: 1.75rem; flex-shrink: 0; }
 .brand span { font-family: var(--serif); font-size: 1.2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.sg-flag {
-  display: inline-block;
-  width: 1.35rem;
-  height: auto;
-  border-radius: 2px;
-  box-shadow: 0 0 0 1px rgb(28 25 22 / 0.12);
-  flex-shrink: 0;
-  vertical-align: middle;
-}
-.brand .sg-flag { width: 1.5rem; }
-.hero-eyebrow { display: inline-flex; align-items: center; gap: 0.45rem; }
-.sg-flag-hero { box-shadow: 0 0 0 1px rgb(251 248 242 / 0.35); }
-.sg-flag-footer { margin-left: 0.35rem; vertical-align: -0.1rem; }
 .nav-links { display: none; gap: 1.75rem; }
 .nav-links a { font-size: 0.9rem; color: var(--stone); }
 .nav-links a:hover { color: var(--ink); }

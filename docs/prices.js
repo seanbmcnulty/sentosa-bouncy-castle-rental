@@ -3,7 +3,7 @@ window.SBCR_PRICES = {
   fullDay: 189,
   mainlandDelivery: 60,
   currency: "S$",
-  updatedAt: "2026-09-15T02:42",
+  updatedAt: "2026-09-15T03:31",
   note: "Full-day only. Internal yield may change fullDay; never publish a rate matrix."
 };
 
@@ -23,12 +23,14 @@ window.SBCR_PRICES = {
       if (key === "paynowLine") {
         el.innerHTML =
           "Full day " + money(p.fullDay) +
-          "<br />+ " + money(p.mainlandDelivery) + " if outside Sentosa";
+          "<br />Free on Sentosa or self pick-up &amp; return" +
+          "<br />+ " + money(p.mainlandDelivery) + " if we deliver off Sentosa";
       }
       if (key === "footerLine") {
         el.textContent =
           "Full day " + money(p.fullDay) +
-          " · Free Sentosa delivery · " + money(p.mainlandDelivery) + " elsewhere · Self-setup";
+          " · Free Sentosa delivery or self pick-up · " + money(p.mainlandDelivery) +
+          " off-Sentosa delivery · Self-setup";
       }
       if (key === "heroPrices") {
         el.innerHTML =
@@ -47,7 +49,7 @@ window.SBCR_PRICES = {
       pkgHidden.value = "Full day — " + money(p.fullDay);
     }
     if (offOpt) {
-      offOpt.value = "Elsewhere in Singapore — +" + money(p.mainlandDelivery);
+      offOpt.value = "Elsewhere in Singapore — +" + money(p.mainlandDelivery) + " delivery";
       offOpt.textContent = offOpt.value;
     }
   }

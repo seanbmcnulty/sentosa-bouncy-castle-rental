@@ -1,9 +1,9 @@
 /** Live list prices — single source of truth for the whole site. */
 window.SBCR_PRICES = {
-  fullDay: 189,
+  fullDay: 149,
   mainlandDelivery: 60,
   currency: "$",
-  updatedAt: "2026-09-15T03:58",
+  updatedAt: "2026-09-20T22:13",
   note: "Full-day only. Internal yield may change fullDay; never publish a rate matrix."
 };
 

@@ -185,7 +185,6 @@ footer strong { color: var(--ink); }
   footer { padding-bottom: 3rem; }
 }
 
-#eventDate { font-size: 1.05rem; font-weight: 600; }
 
 /* Mobile polish */
 @media (max-width: 699px) {
@@ -249,4 +248,61 @@ footer strong { color: var(--ink); }
 @media (max-width: 699px) {
   .book-step { padding: 1.25rem; }
   .step-head h3 { font-size: 1.45rem; }
+}
+
+/* Booking: inline month calendar */
+.cal-field { display: grid; gap: 0.5rem; scroll-margin-top: 5.5rem; }
+.field-label { font-size: 0.9rem; font-weight: 500; }
+.cal {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 0.75rem;
+  padding: 0.8rem 0.4rem 0.9rem; min-width: 0;
+}
+.cal.has-error { border-color: #a4493a; box-shadow: 0 0 0 1px #a4493a; }
+.cal-head { padding: 0 0.2rem; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.6rem; }
+.cal-title { margin: 0; font-family: var(--serif); font-size: 1.45rem; font-weight: 600; line-height: 1.1; text-align: center; }
+.cal-nav {
+  width: 2.5rem; height: 2.5rem; flex-shrink: 0; display: inline-grid; place-items: center;
+  border-radius: 999px; border: 1px solid var(--line); background: var(--cream); color: var(--ink);
+  font: 500 1.6rem/1 var(--serif); padding: 0 0 0.2rem; cursor: pointer;
+}
+.cal-nav:hover:not(:disabled) { border-color: var(--charcoal); }
+.cal-nav:disabled { opacity: 0.35; cursor: default; }
+.cal-dow, .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0.2rem; }
+.cal-dow { margin-bottom: 0.3rem; }
+.cal-dow span { text-align: center; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); }
+.cal-day, .cal-blank { min-height: 2.75rem; }
+.cal-day {
+  display: grid; place-items: center; width: 100%; min-width: 0; padding: 0;
+  border-radius: 0.5rem; border: 1px solid transparent; background: transparent;
+  font: 500 0.98rem/1 var(--sans); color: var(--ink); font-variant-numeric: tabular-nums;
+  -webkit-tap-highlight-color: transparent; transition: background-color 0.12s, border-color 0.12s;
+}
+.cal-day.is-open { background: var(--cream); border-color: var(--line); cursor: pointer; }
+.cal-day.is-open:hover { border-color: var(--charcoal); }
+.cal-day.is-off { color: var(--mist); opacity: 0.4; cursor: default; }
+.cal-day.is-booked {
+  background: var(--paper-deep); color: var(--mist); cursor: not-allowed;
+  text-decoration: line-through; text-decoration-thickness: 1.5px;
+}
+.cal-day.is-selected, .cal-day.is-selected:hover { background: var(--charcoal); border-color: var(--charcoal); color: var(--cream); font-weight: 600; }
+.cal-day:focus-visible, .cal-nav:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 2px; }
+.cal-status { margin: 0.8rem 0 0; text-align: center; font-size: 0.95rem; color: var(--stone); }
+.cal-status strong { color: var(--ink); font-family: var(--serif); font-size: 1.2rem; font-weight: 600; }
+.cal-error { margin: 0.35rem 0 0; text-align: center; font-size: 0.9rem; font-weight: 600; color: #a4493a; }
+.cal-legend {
+  list-style: none; margin: 0.75rem 0 0; padding: 0.7rem 0 0; border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1.1rem;
+  font-size: 0.8rem; color: var(--stone);
+}
+.cal-legend li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.cal-key { width: 0.95rem; height: 0.95rem; border-radius: 0.25rem; border: 1px solid var(--line); display: inline-block; }
+.key-open { background: var(--cream); }
+.key-booked { background: var(--paper-deep) linear-gradient(to bottom right, transparent calc(50% - 0.75px), var(--mist) calc(50% - 0.75px), var(--mist) calc(50% + 0.75px), transparent calc(50% + 0.75px)); }
+.key-selected { background: var(--charcoal); border-color: var(--charcoal); }
+@media (min-width: 700px) {
+  .cal { padding: 1.1rem 1.25rem 1rem; }
+  .cal-dow, .cal-grid { gap: 0.35rem; }
+  .cal-day, .cal-blank { min-height: 3rem; }
+  .cal-day { font-size: 1.02rem; }
+  .cal-title { font-size: 1.6rem; }
 }

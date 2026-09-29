@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=20260929c" />
+  <link rel="stylesheet" href="styles.css?v=20260929d" />
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E9QH8FBF27"></script>
   <script>
@@ -217,7 +217,7 @@
         <div class="section-head">
           <p class="eyebrow">Book now</p>
           <h2>Book in three quick steps.</h2>
-          <p>Pick an open date, add your details, then PayNow and submit. Only available dates are listed (one full-day hire per day), and Yumi confirms every booking on WhatsApp.</p>
+          <p>Pick an open date, add your details, then PayNow and submit. Only open dates can be picked (one full-day hire per day), and Yumi confirms every booking on WhatsApp.</p>
         </div>
         <div class="book-grid book-grid-single">
           <form class="book-form" id="booking-form" action="https://formsubmit.co/seanbmcnulty@gmail.com" method="POST" enctype="multipart/form-data">
@@ -238,11 +238,26 @@
                 </div>
               </div>
               <div class="form-grid">
-                <label class="field">Available date
-                  <select required name="eventDate" id="eventDate">
-                    <option value="">Loading available dates…</option>
-                  </select>
-                </label>
+                <div class="field cal-field">
+                  <span class="field-label" id="calLabel">Available date</span>
+                  <input type="hidden" name="eventDate" id="eventDate" value="" />
+                  <div class="cal" id="bookingCal" role="group" aria-labelledby="calLabel" aria-describedby="calStatus">
+                    <div class="cal-head">
+                      <button type="button" class="cal-nav" id="calPrev" aria-label="Previous month">&#8249;</button>
+                      <p class="cal-title" id="calTitle" aria-live="polite"></p>
+                      <button type="button" class="cal-nav" id="calNext" aria-label="Next month">&#8250;</button>
+                    </div>
+                    <div class="cal-dow" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+                    <div class="cal-grid" id="calGrid"></div>
+                    <p class="cal-status" id="calStatus" aria-live="polite">Loading available dates…</p>
+                    <p class="cal-error" id="eventDateError" role="alert" hidden>Please pick a date</p>
+                    <ul class="cal-legend" aria-hidden="true">
+                      <li><span class="cal-key key-open"></span>Available</li>
+                      <li><span class="cal-key key-booked"></span>Booked</li>
+                      <li><span class="cal-key key-selected"></span>Selected</li>
+                    </ul>
+                  </div>
+                </div>
                 <label class="field">Delivery or pick-up
                   <select required name="location" id="bookingLocation">
                     <option value="">Select…</option>
@@ -340,6 +355,6 @@
       location.hash = 'book';
     }
   </script>
-  <script src="prices.js?v=20260929c"></script>
+  <script src="prices.js?v=20260929d"></script>
 </body>
 </html>

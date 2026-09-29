@@ -177,9 +177,36 @@ window.SBCR_PRICES = {
       updateBooking();
       const text = buildWhatsAppText(form);
       const wa = "https://wa.me/6582003847?text=" + encodeURIComponent(text);
+      // Send the booking email first (in the background) so it isn't lost when
+      // the phone switches to WhatsApp, then open WhatsApp.
+      const data = new FormData(form);
+      const file = data.get("paymentProof");
+      const hasFile = file && file.size > 0;
+      if (!hasFile) data.delete("paymentProof");
+      let sent = false;
+      try {
+        fetch(form.action, { method: "POST", body: data, mode: "no-cors", keepalive: !hasFile })
+          .then(function () { sent = true; showThanks(); })
+          .catch(function () { if (!sent) HTMLFormElement.prototype.submit.call(form); });
+      } catch (err) {
+        HTMLFormElement.prototype.submit.call(form);
+        return;
+      }
       window.open(wa, "_blank", "noopener,noreferrer");
-      HTMLFormElement.prototype.submit.call(form);
     });
+    function showThanks() {
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.textContent = "Booking sent ✓"; btn.disabled = true; }
+      let note = document.getElementById("book-sent-note");
+      if (!note) {
+        note = document.createElement("p");
+        note.id = "book-sent-note";
+        note.className = "field-hint";
+        note.style.fontWeight = "600";
+        note.textContent = "Thanks! Your booking was sent. If WhatsApp didn't open, message Yumi on +65 8200 3847.";
+        btn ? btn.insertAdjacentElement("afterend", note) : form.appendChild(note);
+      }
+    }
   }
 
   function setDateMin() {

@@ -229,3 +229,5 @@ footer strong { color: var(--ink); }
 @media (min-width: 700px) and (max-width: 899px) {
   .steps { grid-template-columns: 1fr 1fr; }
 }
+
+.book-grid-single { grid-template-columns: 1fr !important; max-width: 40rem; margin: 0 auto; }

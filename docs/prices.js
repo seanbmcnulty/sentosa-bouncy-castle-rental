@@ -120,11 +120,26 @@ window.SBCR_PRICES = {
   }
 
   function setDateMin() {
-    const d = document.getElementById("eventDate");
-    if (!d) return;
-    const t = new Date();
-    const iso = t.toLocaleDateString("en-CA", { timeZone: "Asia/Singapore" });
-    d.min = iso;
+    const sel = document.getElementById("eventDate");
+    if (!sel || sel.tagName !== "SELECT") return;
+    const fmt = new Intl.DateTimeFormat("en-SG", { timeZone: "Asia/Singapore", weekday: "short", day: "numeric", month: "short", year: "numeric" });
+    const iso = (d) => d.toLocaleDateString("en-CA", { timeZone: "Asia/Singapore" });
+    function fill(booked) {
+      const taken = new Set(booked || []);
+      sel.innerHTML = '<option value="">Select a date…</option>';
+      const start = new Date();
+      start.setDate(start.getDate() + 1);
+      for (let i = 0; i < 120; i++) {
+        const d = new Date(start.getTime() + i * 86400000);
+        const key = iso(d);
+        if (taken.has(key)) continue;
+        const o = document.createElement("option");
+        o.value = key;
+        o.textContent = fmt.format(d);
+        sel.appendChild(o);
+      }
+    }
+    fetch("booked.json?v=" + Date.now()).then((r) => r.json()).then((j) => fill(j.booked)).catch(() => fill([]));
   }
 
   if (document.readyState === "loading") {

@@ -217,17 +217,9 @@
         <div class="section-head">
           <p class="eyebrow">Book now</p>
           <h2>Pick a date and book.</h2>
-          <p>Check availability on the calendar (busy = taken; one full-day hire per day), choose your date in the form, PayNow, then submit.</p>
+          <p>Pick an available date from the list, PayNow, then submit. Only open dates are shown (one full-day hire per day).</p>
         </div>
-        <div class="book-grid book-grid-calendar">
-          <div class="card" style="padding:0.75rem">
-            <p class="eyebrow" style="padding:0.5rem 0.5rem 0">Availability</p>
-            <div class="calendar-wrap">
-              <iframe class="calendar-frame" id="avail-calendar" title="Availability calendar" loading="lazy" src="https://calendar.google.com/calendar/embed?src=6f530f5c61bd78e815a209147e8de2b76328ae3598300e6ffe77d2d38eb330bf%40group.calendar.google.com&amp;ctz=Asia%2FSingapore&amp;mode=WEEK&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0"></iframe>
-            </div>
-            <p style="color:var(--stone);font-size:0.85rem;padding:0.5rem 0.75rem 0.75rem;margin:0">Check free/busy here, then enter the same date in the form. Swipe sideways on the calendar if you need more days.</p>
-          </div>
-
+        <div class="book-grid book-grid-single">
           <div class="card">
             <div class="paynow" style="margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--line)">
               <p class="eyebrow">PayNow</p>
@@ -243,8 +235,10 @@
               <input type="hidden" name="_next" value="https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#book-thanks" />
               <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
-              <label class="field">Booking date
-                <input required name="eventDate" id="eventDate" type="date" />
+              <label class="field">Available date
+                <select required name="eventDate" id="eventDate">
+                  <option value="">Loading available dates…</option>
+                </select>
               </label>
               <input type="hidden" name="package" data-price-option="full" value="Full day — $149" />
               <p style="margin:0;color:var(--stone);font-size:0.9rem">Package: <strong data-price="fullDayLabel">Full day — $149</strong> (full-day hires only)</p>
@@ -285,7 +279,7 @@
                 <label class="check-row"><input required type="checkbox" name="confirmSelfSetup" value="yes" /><span class="check-text">I will set up and pack down myself</span></label>
                 <label class="check-row"><input required type="checkbox" name="confirmPower" value="yes" /><span class="check-text">I have a nearby power point for the blower</span></label>
                 <label class="check-row"><input required type="checkbox" name="confirmPay" value="yes" /><span class="check-text">I will PayNow the package total (and delivery fee only if you deliver off Sentosa)</span></label>
-                <label class="check-row"><input required type="checkbox" name="confirmDateFree" value="yes" /><span class="check-text">I checked the calendar — this date looks free</span></label>
+                <label class="check-row"><input required type="checkbox" name="confirmDateFree" value="yes" /><span class="check-text">I picked one of the available dates above</span></label>
                 <label class="check-row"><input required type="checkbox" name="confirmRules" value="yes" /><span class="check-text">I agree to the Rules (adult supervision, weather, damage, safe use). Soft play balls are not included. <a class="rules-jump" href="#rules">Read rules</a></span></label>
               </div>
 
@@ -323,20 +317,5 @@
     }
   </script>
   <script src="prices.js"></script>
-  <script>
-    (function () {
-      var frame = document.getElementById("avail-calendar");
-      if (!frame) return;
-      var base = "https://calendar.google.com/calendar/embed?src=6f530f5c61bd78e815a209147e8de2b76328ae3598300e6ffe77d2d38eb330bf%40group.calendar.google.com&ctz=Asia%2FSingapore&showTitle=0&showPrint=0&showTabs=1&showCalendars=0&mode=";
-      function sync() {
-        // Phones: WEEK grid; desktop: MONTH. Tabs stay on so users can switch.
-        var mode = window.matchMedia("(min-width: 700px)").matches ? "MONTH" : "WEEK";
-        var next = base + mode;
-        if (frame.getAttribute("src") !== next) frame.setAttribute("src", next);
-      }
-      sync();
-      window.matchMedia("(min-width: 700px)").addEventListener("change", sync);
-    })();
-  </script>
 </body>
 </html>

@@ -101,7 +101,6 @@ section { padding: 5rem 0; }
 .rule { background: var(--cream); border-radius: 0.75rem; padding: 1.1rem; box-shadow: var(--shadow); }
 .rule h3 { font-size: 1.25rem; }
 .rule p { margin: 0.45rem 0 0; color: var(--stone); font-size: 0.92rem; }
-.card > .calendar-wrap + p { /* spacing handled inline */ }
 .book-grid { display: grid; gap: 1.25rem; align-items: start; }
 .card { background: var(--cream); border-radius: 1rem; padding: 1.25rem; box-shadow: var(--shadow); }
 .paynow { text-align: center; }
@@ -153,24 +152,6 @@ input:focus, select:focus, textarea:focus { outline: 2px solid rgb(28 25 22 / 0.
   text-underline-offset: 2px;
   white-space: nowrap;
 }
-.calendar-wrap {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 0.5rem;
-}
-.calendar-frame {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-height: 28rem;
-  border: 0;
-  border-radius: 0.5rem;
-  background: var(--cream);
-}
-.book-grid .card .calendar-frame { box-shadow: none; }
 .mobile-dock {
   position: fixed; inset-inline: 0; bottom: 0; z-index: 40;
   border-top: 1px solid var(--line); background: rgb(244 240 232 / 0.95);
@@ -204,9 +185,6 @@ footer strong { color: var(--ink); }
   footer { padding-bottom: 3rem; }
 }
 
-@media (min-width: 900px) {
-  .book-grid-calendar { grid-template-columns: 1.05fr 0.95fr; }
-}
 #eventDate { font-size: 1.05rem; font-weight: 600; }
 
 /* Mobile polish */
@@ -215,8 +193,6 @@ footer strong { color: var(--ink); }
   section { padding: 3.25rem 0; }
   .hero-content { padding: 6rem 0 4.5rem; }
   .hero h1 { max-width: 12ch; }
-  .calendar-frame { min-height: 26rem; min-width: 32rem; }
-  .calendar-wrap { margin-inline: -0.25rem; }
   .price-card { padding: 1.25rem; }
   .nav-inner { height: 3.75rem; }
   .brand span { font-size: 1.05rem; }
@@ -230,4 +206,47 @@ footer strong { color: var(--ink); }
   .steps { grid-template-columns: 1fr 1fr; }
 }
 
-.book-grid-single { grid-template-columns: 1fr !important; max-width: 40rem; margin: 0 auto; }
+.book-grid-single { grid-template-columns: 1fr !important; max-width: 44rem; margin: 0 auto; }
+
+/* Booking: three numbered steps */
+[hidden] { display: none !important; }
+.book-form { display: grid; gap: 1rem; }
+#book .section-head { max-width: 44rem; margin-inline: auto; }
+.book-step { padding: 1.5rem; }
+.step-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.step-badge {
+  flex-shrink: 0; display: inline-grid; place-items: center;
+  width: 2.25rem; height: 2.25rem; border-radius: 999px;
+  background: var(--charcoal); color: var(--cream);
+  font-family: var(--serif); font-size: 1.25rem; font-weight: 600; line-height: 1;
+}
+.step-head h3 { font-size: 1.6rem; }
+.step-sub { margin: 0.15rem 0 0; color: var(--stone); font-size: 0.88rem; }
+.field-hint { font-weight: 400; color: var(--stone); font-size: 0.84rem; line-height: 1.4; }
+.optional { font-weight: 400; color: var(--stone); }
+.pay-row { display: grid; gap: 1.25rem; align-items: center; }
+.paynow { background: var(--paper); border: 1px solid var(--line); border-radius: 0.75rem; padding: 0.9rem 0.9rem 0.6rem; }
+.paynow img { width: min(210px, 100%); margin: 0 auto; border-radius: 0.35rem; }
+.paynow-cap { margin: 0.5rem 0 0; color: var(--stone); font-size: 0.82rem; }
+.pay-side { display: grid; gap: 0.9rem; }
+.booking-total {
+  margin: 0; padding: 0.85rem 1rem; border-radius: 0.75rem;
+  background: var(--paper); border: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.4rem; row-gap: 0.1rem;
+}
+.booking-total .total-label { font-weight: 600; }
+.booking-total .total-amount { font-family: var(--serif); font-size: 2.1rem; font-weight: 600; line-height: 1; }
+.booking-total .total-note { color: var(--stone); font-size: 0.88rem; }
+.pay-fine { margin: 0; color: var(--stone); font-size: 0.86rem; }
+.next-note { margin: 0; color: var(--stone); font-size: 0.85rem; text-align: center; }
+.next-note strong { color: var(--ink); font-weight: 600; }
+.checkboxes .check-row { color: var(--ink); font-size: 0.95rem; }
+.text-link { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+@media (min-width: 700px) {
+  .book-step { padding: 1.75rem 2rem; }
+  .pay-row { grid-template-columns: 15rem 1fr; }
+}
+@media (max-width: 699px) {
+  .book-step { padding: 1.25rem; }
+  .step-head h3 { font-size: 1.45rem; }
+}

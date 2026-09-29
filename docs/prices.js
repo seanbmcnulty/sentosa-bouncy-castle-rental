@@ -33,7 +33,7 @@ window.SBCR_PRICES = {
     const form = document.getElementById("booking-form");
     if (form) {
       form.addEventListener("submit", function () {
-        track("booking_submit", { currency: "SGD", value: (window.SBCR_PRICES && window.SBCR_PRICES.fullDay) || undefined });
+        track("booking_submit", { currency: "SGD", value: bookingTotal().amount || undefined });
       });
     }
   }
@@ -75,31 +75,93 @@ window.SBCR_PRICES = {
       pkgHidden.value = "Full day — " + money(p.fullDay);
     }
     if (offOpt) {
-      offOpt.value = "Elsewhere in Singapore — +" + money(p.mainlandDelivery) + " delivery";
+      offOpt.value = "Elsewhere in Singapore — +" + money(p.mainlandDelivery) + " delivery & pickup";
       offOpt.textContent = offOpt.value;
     }
+  }
+
+  /** Which delivery option is picked: "sentosa", "pickup", "elsewhere" or "". */
+  function selectedLocation() {
+    const sel = document.getElementById("bookingLocation");
+    if (!sel || sel.selectedIndex < 0) return "";
+    return sel.options[sel.selectedIndex].getAttribute("data-loc") || "";
+  }
+
+  function bookingTotal() {
+    const p = window.SBCR_PRICES;
+    const loc = selectedLocation();
+    const amount = p.fullDay + (loc === "elsewhere" ? p.mainlandDelivery : 0);
+    let note = "(choose delivery or pick-up in Step 1)";
+    if (loc === "sentosa") note = "(free Sentosa delivery)";
+    if (loc === "pickup") note = "(free self pick-up & return)";
+    if (loc === "elsewhere") note = "(includes " + money(p.mainlandDelivery) + " delivery + pickup)";
+    return { amount: amount, note: note, text: money(amount) + " " + note, loc: loc };
+  }
+
+  function updateBooking() {
+    const t = bookingTotal();
+    const box = document.getElementById("bookingTotal");
+    if (box) {
+      const amt = box.querySelector(".total-amount");
+      const note = box.querySelector(".total-note");
+      if (amt) amt.textContent = money(t.amount);
+      if (note) note.textContent = t.note;
+    }
+    const field = document.getElementById("bookingTotalField");
+    if (field) field.value = t.loc ? t.text : money(t.amount);
+
+    // Address only for deliveries (Sentosa or elsewhere); hidden, disabled and not required for self pick-up.
+    const wrap = document.getElementById("addressField");
+    const addr = document.getElementById("bookingAddress");
+    const needsAddress = t.loc === "sentosa" || t.loc === "elsewhere";
+    if (wrap && addr) {
+      wrap.hidden = !needsAddress;
+      addr.disabled = !needsAddress;
+      addr.required = needsAddress;
+      addr.placeholder = t.loc === "sentosa" ? "Villa / condo, street, unit on Sentosa" : "Block / street, unit, postal code";
+    }
+
+    const wl = document.getElementById("windowLabel");
+    if (wl) wl.textContent = t.loc === "pickup" ? "Pick-up time" : needsAddress ? "Delivery time" : "Delivery / pick-up time";
+  }
+
+  function wireBookingState() {
+    const sel = document.getElementById("bookingLocation");
+    if (!sel || sel.dataset.stateWired === "1") return;
+    sel.dataset.stateWired = "1";
+    sel.addEventListener("change", updateBooking);
+    sel.addEventListener("input", updateBooking);
+    // Restored form values (back button / bfcache) should re-sync the total and address.
+    window.addEventListener("pageshow", updateBooking);
+    updateBooking();
   }
 
   function buildWhatsAppText(form) {
     const fd = new FormData(form);
     const get = (k) => String(fd.get(k) || "").trim();
+    const dateSel = document.getElementById("eventDate");
+    const dateLabel = dateSel && dateSel.selectedIndex > 0 ? dateSel.options[dateSel.selectedIndex].textContent : get("eventDate");
+    const file = form.querySelector('input[name="paymentProof"]');
+    const hasFile = !!(file && file.files && file.files.length);
     const lines = [
       "Hi Yumi — new Sentosa Bouncy Castle booking from the website:",
       "",
-      "Date: " + get("eventDate"),
+      "Date: " + dateLabel,
       "Package: " + get("package"),
-      "Delivery window: " + get("window"),
+      "Delivery / pick-up: " + get("location"),
+      "Time window: " + get("window"),
+      "Total: " + bookingTotal().text,
+      "",
       "Name: " + get("fullName"),
       "Mobile: " + get("mobile"),
       "Email: " + get("email"),
-      "Location: " + get("location"),
-      "Venue: " + get("venueName"),
-      "Address: " + get("address"),
-      "Venue type: " + get("venueType"),
+      get("venueName") ? "Venue: " + get("venueName") : null,
+      get("address") ? "Address: " + get("address") : null,
       get("notes") ? "Notes: " + get("notes") : null,
       "",
-      "Confirms: full-day hire, self-setup, power point, PayNow, calendar checked, Rules accepted (no balls included).",
-      "Please confirm availability and payment.",
+      hasFile ? "PayNow screenshot attached to the web form." : "PayNow: please confirm my payment.",
+      "I've read and agree to the Rules (self-setup, balls not included).",
+      "Please confirm my date.",
     ].filter((x) => x !== null);
     return lines.join("\n");
   }
@@ -112,6 +174,7 @@ window.SBCR_PRICES = {
       if (!form.reportValidity()) return;
       e.preventDefault();
       applyPrices();
+      updateBooking();
       const text = buildWhatsAppText(form);
       const wa = "https://wa.me/6582003847?text=" + encodeURIComponent(text);
       window.open(wa, "_blank", "noopener,noreferrer");
@@ -145,12 +208,14 @@ window.SBCR_PRICES = {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       applyPrices();
+      wireBookingState();
       wireBookingForm();
       setDateMin();
       wireAnalyticsClicks();
     });
   } else {
     applyPrices();
+    wireBookingState();
     wireBookingForm();
     setDateMin();
     wireAnalyticsClicks();

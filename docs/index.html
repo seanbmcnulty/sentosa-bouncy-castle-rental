@@ -167,8 +167,8 @@
           <h2>Four simple steps.</h2>
         </div>
         <div class="steps">
-          <div class="step"><div class="n">01</div><h3>Book</h3><p>Fill in the form, PayNow, and we’ll confirm.</p></div>
-          <div class="step"><div class="n">02</div><h3>Deliver or pick up</h3><p>We drop off on Sentosa (or elsewhere for $60), or you self pick-up &amp; return.</p></div>
+          <div class="step"><div class="n">01</div><h3>Book</h3><p>Pick an open date, fill in the form and PayNow. Yumi confirms on WhatsApp.</p></div>
+          <div class="step"><div class="n">02</div><h3>Deliver or pick up</h3><p>Free delivery on Sentosa (or elsewhere in Singapore for <span data-price="mainlandDelivery">$60</span>), or free self pick-up at The Residences at W Singapore Sentosa Cove.</p></div>
           <div class="step"><div class="n">03</div><h3>Inflate &amp; enjoy</h3><p>Self-setup with the blower. Adult supervision.</p></div>
           <div class="step"><div class="n">04</div><h3>Return</h3><p>Pack down dry. We collect — or you return if self pick-up.</p></div>
         </div>
@@ -198,16 +198,16 @@
         <div class="section-head">
           <p class="eyebrow">Rules</p>
           <h2>Please note.</h2>
-          <p>By booking you agree to these hire terms. Plain English for a small DIY rental — not a substitute for legal advice.</p>
+          <p>You’ll tick one box to agree to these hire terms when you book. Plain English for a small DIY rental — not a substitute for legal advice.</p>
         </div>
         <div class="rules">
           <div class="rule"><h3>Self-setup</h3><p>We deliver and pick up only. You inflate, anchor, supervise, and pack down. Adult supervision is required whenever children are on or near the castle.</p></div>
           <div class="rule"><h3>Your responsibility</h3><p>You use the castle at your own risk. You are responsible for safe setup on suitable ground, correct anchoring, blower use, and pack-down. We are not liable for injury, property damage, or party disruption arising from use or setup.</p></div>
-          <div class="rule"><h3>Delivery</h3><p>Free on Sentosa. Self pick-up &amp; return is the same price (no delivery fee). <span data-price="mainlandDelivery">$60</span> if we deliver &amp; pick up elsewhere in Singapore.</p></div>
+          <div class="rule"><h3>Delivery</h3><p>Free on Sentosa. Self pick-up &amp; return at The Residences at W Singapore Sentosa Cove is also free. <span data-price="mainlandDelivery">$60</span> if we deliver &amp; pick up elsewhere in Singapore.</p></div>
           <div class="rule"><h3>Power &amp; space</h3><p>13A power point within reach of the blower, and about 5.5m × 5.5m clear flat ground (3.2m+ ceiling indoors).</p></div>
           <div class="rule"><h3>Weather</h3><p>Do not inflate or use in rain or strong wind. Pack down dry. If returned wet or muddy we may charge a drying/cleaning fee. Weather cancellations: contact us early — we’ll try to rebook; paid fees are otherwise non-refundable unless we cancel.</p></div>
           <div class="rule"><h3>Care &amp; damage</h3><p>No shoes, food, drink, or sharp objects on the castle. Normal wear is fine. Tears, burns, cigarette damage, lost blower, or serious staining may be charged at repair/replacement cost. Soft play balls are <strong>not</strong> included for now — bring your own if you want the pit filled.</p></div>
-          <div class="rule"><h3>Booking &amp; payment</h3><p>Full-day hires only. PayNow at booking. A slot is held as pending until we confirm payment and availability on WhatsApp. One hire per calendar day. If the date is already taken we’ll refund or move you.</p></div>
+          <div class="rule"><h3>Booking &amp; payment</h3><p>Full-day hires only. PayNow at booking (a screenshot is optional). A date is held as pending until Yumi confirms payment and availability on WhatsApp. One hire per calendar day. If the date is already taken we’ll refund or move you.</p></div>
         </div>
       </div>
     </section>
@@ -216,79 +216,103 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">Book now</p>
-          <h2>Pick a date and book.</h2>
-          <p>Pick an available date from the list, PayNow, then submit. Only open dates are shown (one full-day hire per day).</p>
+          <h2>Book in three quick steps.</h2>
+          <p>Pick an open date, add your details, then PayNow and submit. Only available dates are listed (one full-day hire per day), and Yumi confirms every booking on WhatsApp.</p>
         </div>
         <div class="book-grid book-grid-single">
-          <div class="card">
-            <div class="paynow" style="margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--line)">
-              <p class="eyebrow">PayNow</p>
-              <h3 style="margin-top:0.5rem">Scan to pay</h3>
-              <img src="assets/paynow-qr.png" alt="PayNow QR code" />
-              <p style="color:var(--stone);font-size:0.9rem" data-price="paynowLine">Full day $149<br />Free on Sentosa or self pick-up &amp; return<br />+ $60 if we deliver off Sentosa</p>
+          <form class="book-form" id="booking-form" action="https://formsubmit.co/seanbmcnulty@gmail.com" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_subject" value="New Sentosa Bouncy Castle booking" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#book-thanks" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="package" data-price-option="full" value="Full day — $149" />
+            <input type="hidden" name="total" id="bookingTotalField" value="$149" />
+
+            <div class="card book-step" role="group" aria-labelledby="step1-title">
+              <div class="step-head">
+                <span class="step-badge" aria-hidden="true">1</span>
+                <div>
+                  <h3 id="step1-title">Pick your date</h3>
+                  <p class="step-sub">Full-day hire · <span data-price="fullDay">$149</span></p>
+                </div>
+              </div>
+              <div class="form-grid">
+                <label class="field">Available date
+                  <select required name="eventDate" id="eventDate">
+                    <option value="">Loading available dates…</option>
+                  </select>
+                </label>
+                <label class="field">Delivery or pick-up
+                  <select required name="location" id="bookingLocation">
+                    <option value="">Select…</option>
+                    <option data-loc="sentosa" value="Sentosa — free delivery">Sentosa — free delivery</option>
+                    <option data-loc="pickup" value="Self pick-up at W Residences, Sentosa Cove — free">Self pick-up at W Residences, Sentosa Cove — free</option>
+                    <option data-loc="elsewhere" data-price-option="off" value="Elsewhere in Singapore — +$60 delivery &amp; pickup">Elsewhere in Singapore — +$60 delivery &amp; pickup</option>
+                  </select>
+                  <span class="field-hint">Self pick-up &amp; return is at The Residences at W Singapore Sentosa Cove.</span>
+                </label>
+                <label class="field"><span id="windowLabel">Delivery / pick-up time</span>
+                  <select required name="window" id="bookingWindow">
+                    <option value="">Select…</option>
+                    <option>Morning</option>
+                    <option>Afternoon</option>
+                    <option>Flexible</option>
+                  </select>
+                </label>
+              </div>
             </div>
 
-            <form class="form-grid" id="booking-form" action="https://formsubmit.co/seanbmcnulty@gmail.com" method="POST" enctype="multipart/form-data">
-              <input type="hidden" name="_subject" value="New Sentosa Bouncy Castle booking" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value="https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#book-thanks" />
-              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-
-              <label class="field">Available date
-                <select required name="eventDate" id="eventDate">
-                  <option value="">Loading available dates…</option>
-                </select>
-              </label>
-              <input type="hidden" name="package" data-price-option="full" value="Full day — $149" />
-              <p style="margin:0;color:var(--stone);font-size:0.9rem">Package: <strong data-price="fullDayLabel">Full day — $149</strong> (full-day hires only)</p>
-              <label class="field">Preferred delivery / pick-up window
-                <select required name="window">
-                  <option value="">Select…</option>
-                  <option>Morning delivery</option>
-                  <option>Afternoon delivery</option>
-                  <option>Self pick-up &amp; return</option>
-                  <option>Flexible</option>
-                </select>
-              </label>
-              <div class="form-grid two">
-                <label class="field">Full name<input required name="fullName" autocomplete="name" /></label>
-                <label class="field">Mobile / WhatsApp<input required name="mobile" type="tel" autocomplete="tel" placeholder="+65 …" /></label>
+            <div class="card book-step" role="group" aria-labelledby="step2-title">
+              <div class="step-head">
+                <span class="step-badge" aria-hidden="true">2</span>
+                <div>
+                  <h3 id="step2-title">Your details</h3>
+                  <p class="step-sub">So Yumi can confirm on WhatsApp.</p>
+                </div>
               </div>
-              <label class="field">Email<input required name="email" type="email" autocomplete="email" /></label>
-              <label class="field">Location
-                <select required name="location">
-                  <option value="">Select…</option>
-                  <option value="Sentosa — free delivery">Sentosa — free delivery</option>
-                  <option value="Self pick-up &amp; return — free (same as Sentosa)">Self pick-up &amp; return — free (same as Sentosa)</option>
-                  <option data-price-option="off" value="Elsewhere in Singapore — +$60 delivery">Elsewhere in Singapore — +$60 delivery</option>
-                </select>
-              </label>
-              <label class="field">Venue name (condo / hotel / home)<input name="venueName" /></label>
-              <label class="field">Delivery address <span style="font-weight:400;color:var(--stone)">(or “self pick-up” + your contact)</span><textarea required name="address" rows="2"></textarea></label>
-              <label class="field">Venue type
-                <select name="venueType">
-                  <option>Home / condo</option>
-                  <option>Hotel / resort / function</option>
-                </select>
-              </label>
-              <label class="field">PayNow screenshot or reference (recommended)<input name="paymentProof" type="file" accept="image/*,.pdf" /></label>
-              <label class="field">Notes<textarea name="notes" rows="3" placeholder="Access, loading bay, timing flexibility…"></textarea></label>
-
-              <div class="checkboxes">
-                <label class="check-row"><input required type="checkbox" name="confirmSelfSetup" value="yes" /><span class="check-text">I will set up and pack down myself</span></label>
-                <label class="check-row"><input required type="checkbox" name="confirmPower" value="yes" /><span class="check-text">I have a nearby power point for the blower</span></label>
-                <label class="check-row"><input required type="checkbox" name="confirmPay" value="yes" /><span class="check-text">I will PayNow the package total (and delivery fee only if you deliver off Sentosa)</span></label>
-                <label class="check-row"><input required type="checkbox" name="confirmDateFree" value="yes" /><span class="check-text">I picked one of the available dates above</span></label>
-                <label class="check-row"><input required type="checkbox" name="confirmRules" value="yes" /><span class="check-text">I agree to the Rules (adult supervision, weather, damage, safe use). Soft play balls are not included. <a class="rules-jump" href="#rules">Read rules</a></span></label>
+              <div class="form-grid">
+                <div class="form-grid two">
+                  <label class="field">Full name<input required name="fullName" autocomplete="name" /></label>
+                  <label class="field">Mobile / WhatsApp<input required name="mobile" type="tel" autocomplete="tel" placeholder="+65 …" /></label>
+                </div>
+                <label class="field">Email<input required name="email" type="email" autocomplete="email" /></label>
+                <label class="field"><span>Venue name <span class="optional">(condo / hotel / home, optional)</span></span><input name="venueName" /></label>
+                <label class="field" id="addressField" hidden>Delivery address<textarea name="address" id="bookingAddress" rows="2" placeholder="Block / street, unit, postal code" disabled></textarea></label>
+                <label class="field"><span>Notes <span class="optional">(optional)</span></span><textarea name="notes" rows="3" placeholder="Access, loading bay, timing flexibility…"></textarea></label>
               </div>
+            </div>
 
-              <button class="btn full" type="submit">Book this date</button>
-              <p style="margin:0;color:var(--stone);font-size:0.85rem">We’ll confirm on WhatsApp (+65 8200 3847) after payment.</p>
-            </form>
-            <div id="book-thanks" style="display:none;margin-top:1rem;padding:1rem;border-radius:0.75rem;background:var(--paper);color:var(--ok);font-weight:600">Thanks — booking received for your chosen date. We’ll confirm on WhatsApp shortly.</div>
-            <p style="margin-top:1rem"><a class="btn btn-outline" href="https://wa.me/6582003847?text=Hi%20Yumi%2C%20I%20submitted%20a%20booking%20for%20a%20specific%20date%20and%20paid%20via%20PayNow.">WhatsApp Yumi</a></p>
-          </div>
+            <div class="card book-step" role="group" aria-labelledby="step3-title">
+              <div class="step-head">
+                <span class="step-badge" aria-hidden="true">3</span>
+                <div>
+                  <h3 id="step3-title">Pay and book</h3>
+                  <p class="step-sub">PayNow the total, then submit.</p>
+                </div>
+              </div>
+              <div class="pay-row">
+                <div class="paynow">
+                  <img src="assets/paynow-qr.png" alt="PayNow QR code" />
+                  <p class="paynow-cap">Scan with your banking app</p>
+                </div>
+                <div class="pay-side">
+                  <p class="booking-total" id="bookingTotal" aria-live="polite"><span class="total-label">Total:</span> <strong class="total-amount">$149</strong> <span class="total-note">(choose delivery or pick-up in Step 1)</span></p>
+                  <p class="pay-fine">No deposit. Setup is done by you, and soft-play balls aren’t included.</p>
+                  <label class="field"><span>Payment screenshot <span class="optional">(optional)</span></span><input name="paymentProof" type="file" accept="image/*,.pdf" /><span class="field-hint">No screenshot? No problem. Yumi will confirm your payment on WhatsApp.</span></label>
+                </div>
+              </div>
+              <div class="form-grid" style="margin-top:1.25rem">
+                <div class="checkboxes">
+                  <label class="check-row"><input required type="checkbox" name="confirmRules" value="yes" /><span class="check-text">I’ve read and agree to the <a class="rules-jump" href="#rules">Rules</a> (self-setup, balls not included)</span></label>
+                </div>
+                <button class="btn full" type="submit">Book this date</button>
+                <p class="next-note"><strong>What happens next:</strong> Submitting opens WhatsApp with your booking details. Send it, and Yumi will confirm your date shortly.</p>
+              </div>
+            </div>
+          </form>
+          <div id="book-thanks" style="display:none;padding:1rem;border-radius:0.75rem;background:var(--cream);box-shadow:var(--shadow);color:var(--ok);font-weight:600">Thanks — booking received for your chosen date. If WhatsApp didn’t open, message Yumi below and she’ll confirm shortly.</div>
+          <p style="margin:0;text-align:center;color:var(--stone);font-size:0.9rem">Questions first? <a class="text-link" href="https://wa.me/6582003847?text=Hi%20Yumi%2C%20I%27d%20like%20to%20ask%20about%20booking%20the%20white%20bouncy%20castle.">WhatsApp Yumi</a> on +65 8200 3847.</p>
         </div>
       </div>
     </section>

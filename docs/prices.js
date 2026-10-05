@@ -1,6 +1,6 @@
 /** Live list prices — single source of truth for the whole site. */
 window.SBCR_PRICES = {
-  fullDay: 149,
+  fullDay: 129,
   mainlandDelivery: 60,
   currency: "$",
   updatedAt: "2026-09-20T22:13",

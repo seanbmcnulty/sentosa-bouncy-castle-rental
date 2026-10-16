@@ -104,7 +104,6 @@ section { padding: 5rem 0; }
 .book-grid { display: grid; gap: 1.25rem; align-items: start; }
 .card { background: var(--cream); border-radius: 1rem; padding: 1.25rem; box-shadow: var(--shadow); }
 .paynow { text-align: center; }
-.paynow img { width: min(240px, 100%); margin: 0.85rem auto; }
 .form-grid { display: grid; gap: 0.95rem; }
 .form-grid.two { grid-template-columns: 1fr; }
 label.field { display: grid; gap: 0.35rem; font-size: 0.9rem; font-weight: 500; }
@@ -225,7 +224,7 @@ footer strong { color: var(--ink); }
 .optional { font-weight: 400; color: var(--stone); }
 .pay-row { display: grid; gap: 1.25rem; align-items: center; }
 .paynow { background: var(--paper); border: 1px solid var(--line); border-radius: 0.75rem; padding: 0.9rem 0.9rem 0.6rem; }
-.paynow img { width: min(210px, 100%); margin: 0 auto; border-radius: 0.35rem; }
+.paynow img { display: block; width: min(260px, 100%); height: auto; margin: 0 auto; background: #fff; border-radius: 0.35rem; }
 .paynow-cap { margin: 0.5rem 0 0; color: var(--stone); font-size: 0.82rem; }
 .pay-side { display: grid; gap: 0.9rem; }
 .booking-total {

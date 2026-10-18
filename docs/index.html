@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- SEO PRICE NOTE: prices live in prices.js (window.SBCR_PRICES). The $129 / $60 in this <title>,
+  <!-- SEO PRICE NOTE: prices live in prices.js (window.SBCR_PRICES). The $129 / $60 / $89 in this <title>,
        the meta/OG/Twitter descriptions and the JSON-LD below are static copies for crawlers and link
-       previews. prices.js re-syncs the JSON-LD at runtime, but when fullDay or mainlandDelivery change,
-       also update these static copies (search this file for "$129" and "$60"). -->
+       previews. prices.js re-syncs the JSON-LD at runtime, but when fullDay, mainlandDelivery or extraDay change,
+       also update these static copies (search this file for "$129", "$60" and "$89"). -->
   <title>White Bouncy Castle Rental Singapore | Sentosa | Full Day $129</title>
-  <meta name="description" content="White bouncy castle rental in Singapore: a bounce house with slide and ball pit for birthday parties. Full day $129, free Sentosa delivery or self pick-up, no deposit. Book online." />
+  <meta name="description" content="White bouncy castle rental in Singapore: a big 4.3 × 4.5 m bounce house with slide and ball pit. Full day $129, extra days $89, free Sentosa delivery or self pick-up. Book online." />
   <link rel="canonical" href="https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/" />
   <meta name="theme-color" content="#1c1916" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=20261018a" />
+  <link rel="stylesheet" href="styles.css?v=20261018b" />
   <!-- Structured data. Offer price / FAQ answers are static copies of prices.js values (see SEO PRICE NOTE above);
        prices.js rewrites #ld-business prices and rebuilds #ld-faq from the visible FAQ at runtime. No street address on purpose. -->
   <script type="application/ld+json" id="ld-business">
@@ -64,7 +64,7 @@
         "@id": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#service",
         "name": "White bouncy castle rental (full day)",
         "serviceType": "Bouncy castle rental",
-        "description": "Full-day hire of an all-white four-turret bounce house with side slide and front ball pit (about 4.3m x 4.5m x 3.0m). Self-setup, electric blower included, ball-pit balls not included. Free delivery on Sentosa or free self pick-up at The Residences at W Singapore Sentosa Cove; delivery and pick-up elsewhere in Singapore is an extra $60.",
+        "description": "Full-day hire of an all-white four-turret bounce house with side slide and front ball pit (about 4.3m x 4.5m x 3.0m, roughly twice the floor area of a typical flat-sized rental castle). Self-setup, electric blower included, ball-pit balls not included. Free delivery on Sentosa or free self pick-up at The Residences at W Singapore Sentosa Cove; delivery and pick-up elsewhere in Singapore is an extra $60. Extra consecutive days are $89 each, arranged on WhatsApp.",
         "provider": { "@id": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#business" },
         "areaServed": [
           { "@type": "Country", "name": "Singapore" },
@@ -110,7 +110,7 @@
         "name": "How much does it cost, and how long is the hire?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It's $129 for a full day. We take one hire per calendar day, and there's no deposit. You're only charged if the castle is torn, stained or lost."
+          "text": "It's $129 for a full day. Need it longer? Extra consecutive days are $89 each. Just WhatsApp Yumi to arrange it. We take one hire per calendar day, and there's no deposit. You're only charged if the castle is torn, stained or lost."
         }
       },
       {
@@ -126,7 +126,7 @@
         "name": "How big is it, and how much space do I need?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The castle is about 4.3m × 4.5m × 3.0m inflated (roughly 14 × 14.9 × 10 ft). Allow about 5.5m × 5.5m of clear, flat ground. Indoors, you need a ceiling of 3.2m or more, so it suits lawns, patios and condo or hotel function rooms."
+          "text": "The castle is about 4.3m × 4.5m × 3.0m inflated (roughly 14 × 14.9 × 10 ft), roughly twice the floor area of a typical flat-sized rental castle. Allow about 5.5m × 5.5m of clear, flat ground. Indoors, you need a ceiling of 3.2m or more, so it suits lawns, patios and condo or hotel function rooms."
         }
       },
       {
@@ -253,7 +253,7 @@
           </article>
           <article class="feature">
             <h3>Room to play</h3>
-            <p>About 4.3m × 4.5m × 3.0m inflated — spacious bounce floor plus slide and pit. Needs ~5.5m × 5.5m clear ground (3.2m+ ceiling indoors).</p>
+            <p>About 4.3 × 4.5 m and 3 m tall — roughly twice the floor area of a typical flat-sized rental castle, with a spacious bounce floor plus slide and pit. Needs ~5.5m × 5.5m clear ground (3.2m+ ceiling indoors).</p>
           </article>
           <article class="feature">
             <h3>Easy self-setup</h3>
@@ -285,6 +285,7 @@
               <strong data-price="fullDay">$129</strong>
             </div>
           </div>
+          <p class="extra-days" style="font-size:0.95rem;margin:0.75rem 0 0">Need it longer? Extra days <strong data-price="extraDay">$89</strong> each — just <a class="text-link" href="https://wa.me/6582003847?text=Hi%20Yumi%2C%20I%27d%20like%20to%20hire%20the%20white%20bouncy%20castle%20for%20more%20than%20one%20day.">WhatsApp Yumi</a>.</p>
           <p style="color:var(--stone);font-size:0.9rem;margin:0.75rem 0 0">No deposit. You’re billed only if the castle is torn, stained or lost.</p>
           <div class="checks">
             <div>
@@ -330,7 +331,7 @@
         <div class="section-head">
           <p class="eyebrow">Specs</p>
           <h2>Sized for lawns and function rooms.</h2>
-          <p>Selected size from our Oxford white castle order (bounce + slide + front ball pit). Soft play balls not included — bring your own if you want the pit filled.</p>
+          <p>About 4.3 × 4.5 m and 3 m tall — roughly twice the floor area of a typical flat-sized rental castle (bounce + slide + front ball pit). Soft play balls not included — bring your own if you want the pit filled.</p>
         </div>
         <div class="specs">
           <dl class="spec"><dt>Overall size</dt><dd>4.3m × 4.5m × 3.0m</dd></dl>
@@ -371,9 +372,9 @@
         </div>
         <div class="faq">
           <details class="faq-item"><summary>Where do you deliver the bouncy castle?</summary><p>Delivery and pick-up are free anywhere on Sentosa. You can also collect and return it yourself for free at The Residences at W Singapore Sentosa Cove. For delivery and pick-up elsewhere in Singapore, add <span data-price="mainlandDelivery">$60</span>.</p></details>
-          <details class="faq-item"><summary>How much does it cost, and how long is the hire?</summary><p>It's <span data-price="fullDay">$129</span> for a full day. We take one hire per calendar day, and there's no deposit. You're only charged if the castle is torn, stained or lost.</p></details>
+          <details class="faq-item"><summary>How much does it cost, and how long is the hire?</summary><p>It's <span data-price="fullDay">$129</span> for a full day. Need it longer? Extra consecutive days are <span data-price="extraDay">$89</span> each. Just <a href="https://wa.me/6582003847?text=Hi%20Yumi%2C%20I%27d%20like%20to%20hire%20the%20white%20bouncy%20castle%20for%20more%20than%20one%20day.">WhatsApp Yumi</a> to arrange it. We take one hire per calendar day, and there's no deposit. You're only charged if the castle is torn, stained or lost.</p></details>
           <details class="faq-item"><summary>Do you set it up for us?</summary><p>No, it's self-setup. We deliver and collect (or you pick up). You inflate it with the included electric blower, anchor it, supervise the kids and pack it down. An adult must supervise whenever children are on or near the castle.</p></details>
-          <details class="faq-item"><summary>How big is it, and how much space do I need?</summary><p>The castle is about 4.3m × 4.5m × 3.0m inflated (roughly 14 × 14.9 × 10 ft). Allow about 5.5m × 5.5m of clear, flat ground. Indoors, you need a ceiling of 3.2m or more, so it suits lawns, patios and condo or hotel function rooms.</p></details>
+          <details class="faq-item"><summary>How big is it, and how much space do I need?</summary><p>The castle is about 4.3m × 4.5m × 3.0m inflated (roughly 14 × 14.9 × 10 ft), roughly twice the floor area of a typical flat-sized rental castle. Allow about 5.5m × 5.5m of clear, flat ground. Indoors, you need a ceiling of 3.2m or more, so it suits lawns, patios and condo or hotel function rooms.</p></details>
           <details class="faq-item"><summary>What power does it need?</summary><p>The blower plugs into a standard 13A power point. Make sure there's one within reach of where the castle will stand.</p></details>
           <details class="faq-item"><summary>What happens if it rains?</summary><p>Don't inflate or use the castle in rain or strong wind, and pack it down dry. If the weather turns, contact us early and we'll try to rebook your date.</p></details>
           <details class="faq-item"><summary>What's included?</summary><p>You get the all-white bounce house with side slide and full-width front ball pit, plus the electric blower. Ball-pit balls aren't included, so bring your own if you want the pit filled. On-site setup and staff aren't included either.</p></details>
@@ -478,7 +479,7 @@
               </div>
               <div class="pay-row">
                 <div class="paynow">
-                  <img src="assets/paynow-qr.png?v=20261018a" alt="PayNow QR code for paying the booking total" width="960" height="960" loading="lazy" decoding="async" />
+                  <img src="assets/paynow-qr.png?v=20261018b" alt="PayNow QR code for paying the booking total" width="960" height="960" loading="lazy" decoding="async" />
                   <p class="paynow-cap">Scan with your banking app</p>
                 </div>
                 <div class="pay-side">
@@ -506,7 +507,7 @@
   <footer>
     <div class="wrap">
       <strong>Sentosa Bouncy Castle Rental Co</strong> · White bouncy castle rental in Sentosa &amp; Singapore<br />
-      <span data-price="footerLine">Full day $129 · Free Sentosa delivery or self pick-up · $60 off-Sentosa delivery · Self-setup</span><br />
+      <span data-price="footerLine">Full day $129 · Extra days $89 each · Free Sentosa delivery or self pick-up · $60 off-Sentosa delivery · Self-setup</span><br />
       WhatsApp <a href="https://wa.me/6582003847">+65 8200 3847</a>
     </div>
   </footer>
@@ -525,6 +526,6 @@
       location.hash = 'book';
     }
   </script>
-  <script src="prices.js?v=20261018a"></script>
+  <script src="prices.js?v=20261018b"></script>
 </body>
 </html>

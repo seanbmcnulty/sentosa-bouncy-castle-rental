@@ -3,8 +3,9 @@
 window.SBCR_PRICES = {
   fullDay: 129,
   mainlandDelivery: 60,
+  extraDay: 89, // each extra consecutive day after the first full day (arranged on WhatsApp; form stays single-day)
   currency: "$",
-  updatedAt: "2026-09-20T22:13",
+  updatedAt: "2026-10-18T20:00",
   note: "Full-day only. Internal yield may change fullDay; never publish a rate matrix."
 };
 
@@ -45,6 +46,7 @@ window.SBCR_PRICES = {
       const key = el.getAttribute("data-price");
       if (key === "fullDay") el.textContent = money(p.fullDay);
       if (key === "mainlandDelivery") el.textContent = money(p.mainlandDelivery);
+      if (key === "extraDay") el.textContent = money(p.extraDay);
       if (key === "fullDayLabel") el.textContent = "Full day — " + money(p.fullDay);
       if (key === "offSentosaLabel") el.textContent = "Elsewhere in Singapore — +" + money(p.mainlandDelivery);
       if (key === "paynowLine") {
@@ -56,6 +58,7 @@ window.SBCR_PRICES = {
       if (key === "footerLine") {
         el.textContent =
           "Full day " + money(p.fullDay) +
+          " · Extra days " + money(p.extraDay) + " each" +
           " · Free Sentosa delivery or self pick-up · " + money(p.mainlandDelivery) +
           " off-Sentosa delivery · Self-setup";
       }
@@ -96,7 +99,9 @@ window.SBCR_PRICES = {
           if (node["@type"] === "Service") {
             if (node.offers) node.offers.price = String(p.fullDay);
             if (node.description) {
-              node.description = node.description.replace(/an extra \$\d+/, "an extra " + money(p.mainlandDelivery));
+              node.description = node.description
+                .replace(/an extra \$\d+/, "an extra " + money(p.mainlandDelivery))
+                .replace(/Extra consecutive days are \$\d+/, "Extra consecutive days are " + money(p.extraDay));
             }
           }
         });

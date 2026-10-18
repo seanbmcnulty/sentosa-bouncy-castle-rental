@@ -3,18 +3,167 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>White Bouncy Castle Rental Sentosa | Sentosa Bouncy Castle Rental Co</title>
-  <meta name="description" content="Rent an all-white Oxford bounce house with slide and ball pit. Full day $129. Free delivery on Sentosa or self pick-up & return. Self-setup. Book online." />
-  <meta property="og:title" content="Sentosa Bouncy Castle Rental Co" />
-  <meta property="og:description" content="All-white bounce house for Sentosa kids’ parties. Full day $129. Free Sentosa delivery or self pick-up. Self-setup." />
+  <!-- SEO PRICE NOTE: prices live in prices.js (window.SBCR_PRICES). The $129 / $60 in this <title>,
+       the meta/OG/Twitter descriptions and the JSON-LD below are static copies for crawlers and link
+       previews. prices.js re-syncs the JSON-LD at runtime, but when fullDay or mainlandDelivery change,
+       also update these static copies (search this file for "$129" and "$60"). -->
+  <title>White Bouncy Castle Rental Singapore | Sentosa | Full Day $129</title>
+  <meta name="description" content="White bouncy castle rental in Singapore: a bounce house with slide and ball pit for birthday parties. Full day $129, free Sentosa delivery or self pick-up, no deposit. Book online." />
+  <link rel="canonical" href="https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/" />
+  <meta name="theme-color" content="#1c1916" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:site_name" content="Sentosa Bouncy Castle Rental Co" />
+  <meta property="og:locale" content="en_SG" />
+  <meta property="og:title" content="White Bouncy Castle Rental Singapore | Sentosa | Full Day $129" />
+  <meta property="og:description" content="All-white bounce house with slide and ball pit for birthday parties. Full day $129. Free Sentosa delivery or self pick-up. Self-setup, no deposit." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/" />
   <meta property="og:image" content="https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/assets/gallery-1.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="All-white four-turret bouncy castle with slide and ball pit on a lawn" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="White Bouncy Castle Rental Singapore | Sentosa | Full Day $129" />
+  <meta name="twitter:description" content="All-white bounce house with slide and ball pit for birthday parties. Free Sentosa delivery or self pick-up." />
+  <meta name="twitter:image" content="https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/assets/gallery-1.jpg" />
+  <meta name="twitter:image:alt" content="All-white four-turret bouncy castle with slide and ball pit on a lawn" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=20261016a" />
+  <link rel="stylesheet" href="styles.css?v=20261018a" />
+  <!-- Structured data. Offer price / FAQ answers are static copies of prices.js values (see SEO PRICE NOTE above);
+       prices.js rewrites #ld-business prices and rebuilds #ld-faq from the visible FAQ at runtime. No street address on purpose. -->
+  <script type="application/ld+json" id="ld-business">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#business",
+        "name": "Sentosa Bouncy Castle Rental Co",
+        "description": "White bouncy castle rental in Singapore and Sentosa: an all-white four-turret bounce house with side slide and full-width front ball pit for kids' birthday parties. Full-day self-setup hire.",
+        "url": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/",
+        "image": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/assets/gallery-1.jpg",
+        "telephone": "+6582003847",
+        "currenciesAccepted": "SGD",
+        "paymentAccepted": "PayNow",
+        "areaServed": [
+          { "@type": "Country", "name": "Singapore" },
+          { "@type": "Place", "name": "Sentosa, Singapore" }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "bookings",
+          "telephone": "+6582003847",
+          "url": "https://wa.me/6582003847",
+          "availableLanguage": "English"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#service",
+        "name": "White bouncy castle rental (full day)",
+        "serviceType": "Bouncy castle rental",
+        "description": "Full-day hire of an all-white four-turret bounce house with side slide and front ball pit (about 4.3m x 4.5m x 3.0m). Self-setup, electric blower included, ball-pit balls not included. Free delivery on Sentosa or free self pick-up at The Residences at W Singapore Sentosa Cove; delivery and pick-up elsewhere in Singapore is an extra $60.",
+        "provider": { "@id": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#business" },
+        "areaServed": [
+          { "@type": "Country", "name": "Singapore" },
+          { "@type": "Place", "name": "Sentosa, Singapore" }
+        ],
+        "image": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/assets/gallery-1.jpg",
+        "offers": {
+          "@type": "Offer",
+          "name": "Full-day bouncy castle hire",
+          "price": "129",
+          "priceCurrency": "SGD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#book",
+          "seller": { "@id": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#business" }
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#website",
+        "name": "Sentosa Bouncy Castle Rental Co",
+        "url": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/",
+        "inLanguage": "en-SG",
+        "publisher": { "@id": "https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/#business" }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json" id="ld-faq">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where do you deliver the bouncy castle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Delivery and pick-up are free anywhere on Sentosa. You can also collect and return it yourself for free at The Residences at W Singapore Sentosa Cove. For delivery and pick-up elsewhere in Singapore, add $60."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does it cost, and how long is the hire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's $129 for a full day. We take one hire per calendar day, and there's no deposit. You're only charged if the castle is torn, stained or lost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you set it up for us?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, it's self-setup. We deliver and collect (or you pick up). You inflate it with the included electric blower, anchor it, supervise the kids and pack it down. An adult must supervise whenever children are on or near the castle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How big is it, and how much space do I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The castle is about 4.3m × 4.5m × 3.0m inflated (roughly 14 × 14.9 × 10 ft). Allow about 5.5m × 5.5m of clear, flat ground. Indoors, you need a ceiling of 3.2m or more, so it suits lawns, patios and condo or hotel function rooms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What power does it need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The blower plugs into a standard 13A power point. Make sure there's one within reach of where the castle will stand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if it rains?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Don't inflate or use the castle in rain or strong wind, and pack it down dry. If the weather turns, contact us early and we'll try to rebook your date."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You get the all-white bounce house with side slide and full-width front ball pit, plus the electric blower. Ball-pit balls aren't included, so bring your own if you want the pit filled. On-site setup and staff aren't included either."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I book and pay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pick an open date in the calendar below, fill in your details, then PayNow the total and submit. WhatsApp opens with your booking details. Send the message, and Yumi confirms on WhatsApp (+65 8200 3847)."
+        }
+      }
+    ]
+  }
+  </script>
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E9QH8FBF27"></script>
   <script>
@@ -40,6 +189,7 @@
         <a href="#pricing">Pricing</a>
         <a href="#how">How it works</a>
         <a href="#rules">Rules</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <a class="btn" href="#book">Book now</a>
     </div>
@@ -47,12 +197,12 @@
 
   <main id="top">
     <section class="hero">
-      <img src="assets/hero.jpg" alt="Our all-white bounce house with slide and front ball pit on a Sentosa-style beach" fetchpriority="high" />
+      <img src="assets/hero.jpg" alt="White bouncy castle rental: all-white four-turret bounce house with side slide and front ball pit on a beach" width="1280" height="720" fetchpriority="high" />
       <div class="shade" aria-hidden="true"></div>
       <div class="wrap hero-content">
-        <p class="eyebrow" style="color:rgb(251 248 242 / 0.8)">Sentosa Island · Kids’ parties</p>
-        <h1>The all-white bounce house for Sentosa.</h1>
-        <p class="lede">An Oxford inflatable with bounce area, slide and ball pit. <span data-price="heroPrices"><strong style="color:var(--cream)">Full day $129</strong></span>. Free delivery on Sentosa — or self pick-up &amp; return at the same price.</p>
+        <p class="eyebrow" style="color:rgb(251 248 242 / 0.8)">Bouncy castle rental Singapore · Sentosa · Birthday parties</p>
+        <h1>White bouncy castle rental for Sentosa.</h1>
+        <p class="lede">An all-white bounce house with slide and ball pit for kids’ birthday parties. <span data-price="heroPrices"><strong style="color:var(--cream)">Full day $129</strong></span>. Free delivery on Sentosa, or self pick-up &amp; return at the same price. Delivery elsewhere in Singapore available.</p>
         <div class="hero-actions">
           <a class="btn btn-cream" href="#book">Book now</a>
           <a class="btn btn-outline light" href="https://wa.me/6582003847?text=Hi%20Yumi%2C%20I%27d%20like%20to%20book%20the%20white%20bouncy%20castle.">WhatsApp</a>
@@ -66,12 +216,12 @@
         <div class="section-head">
           <p class="eyebrow">The castle</p>
           <h2>Quiet white. Made for lawns and function rooms.</h2>
-          <p>All-white Oxford inflatable — bounce area, side slide, and full-width front ball pit. The same castle we deliver. Balloons in photos are styling only (not included).</p>
+          <p>Our white bouncy castle: an all-white Oxford bounce house with four turrets, a bounce area, side slide and full-width front ball pit. Every photo shows the same castle we deliver. Balloons in photos are styling only (not included).</p>
         </div>
         <div class="gallery">
-          <figure><img src="assets/gallery-1.jpg" alt="All-white bounce castle on a residential lawn" loading="lazy" /></figure>
-          <figure><img src="assets/gallery-2.jpg" alt="All-white bounce castle with soft balloon styling" loading="lazy" /></figure>
-          <figure><img src="assets/gallery-3.jpg" alt="All-white bounce castle set up for a kids party" loading="lazy" /></figure>
+          <figure><img src="assets/gallery-1.jpg" alt="All-white four-turret bouncy castle with mesh walls, slide and front ball pit set up on a garden lawn" width="1200" height="1200" loading="lazy" decoding="async" /></figure>
+          <figure><img src="assets/gallery-2.jpg" alt="White bouncy castle styled with sage, peach and cream balloon garlands for a birthday party" width="755" height="755" loading="lazy" decoding="async" /></figure>
+          <figure><img src="assets/gallery-3.jpg" alt="White bounce house with slide set up on a lawn for a bee-themed kids’ birthday party with pink and yellow balloons" width="755" height="755" loading="lazy" decoding="async" /></figure>
         </div>
       </div>
     </section>
@@ -81,8 +231,8 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">Why this castle</p>
-          <h2>Quiet white. Built for real parties.</h2>
-          <p>Chosen for Sentosa kids’ birthdays and lawn or function-room setups — premium look without the full-service price tag.</p>
+          <h2>A white bounce house with slide and ball pit.</h2>
+          <p>Chosen for kids’ birthday parties on Sentosa and around Singapore, on lawns or in function rooms. It has a premium look without the full-service price tag.</p>
         </div>
         <div class="features">
           <article class="feature">
@@ -125,7 +275,7 @@
       <div class="wrap price-grid">
         <div>
           <p class="eyebrow">Pricing</p>
-          <h2>Full day hire.</h2>
+          <h2>Full-day bouncy castle hire.</h2>
           <p style="color:var(--stone);margin-top:1rem;max-width:28rem">One booking per calendar day. Free delivery on Sentosa, or self pick-up &amp; return (same price). <span data-price="mainlandDelivery">$60</span> if we deliver &amp; pick up elsewhere in Singapore.</p>
         </div>
         <div class="price-card">
@@ -208,6 +358,26 @@
           <div class="rule"><h3>Weather</h3><p>Do not inflate or use in rain or strong wind. Pack down dry. If returned wet or muddy we may charge a drying/cleaning fee. Weather cancellations: contact us early — we’ll try to rebook; paid fees are otherwise non-refundable unless we cancel.</p></div>
           <div class="rule"><h3>Care &amp; damage</h3><p>No shoes, food, drink, or sharp objects on the castle. Normal wear is fine. Tears, burns, cigarette damage, lost blower, or serious staining may be charged at repair/replacement cost. Soft play balls are <strong>not</strong> included for now — bring your own if you want the pit filled.</p></div>
           <div class="rule"><h3>Booking &amp; payment</h3><p>Full-day hires only. PayNow at booking (a screenshot is optional). A date is held as pending until Yumi confirms payment and availability on WhatsApp. One hire per calendar day. If the date is already taken we’ll refund or move you.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Bouncy castle rental questions.</h2>
+          <p>Quick answers on hiring our white bouncy castle for a birthday party on Sentosa or anywhere in Singapore.</p>
+        </div>
+        <div class="faq">
+          <details class="faq-item"><summary>Where do you deliver the bouncy castle?</summary><p>Delivery and pick-up are free anywhere on Sentosa. You can also collect and return it yourself for free at The Residences at W Singapore Sentosa Cove. For delivery and pick-up elsewhere in Singapore, add <span data-price="mainlandDelivery">$60</span>.</p></details>
+          <details class="faq-item"><summary>How much does it cost, and how long is the hire?</summary><p>It's <span data-price="fullDay">$129</span> for a full day. We take one hire per calendar day, and there's no deposit. You're only charged if the castle is torn, stained or lost.</p></details>
+          <details class="faq-item"><summary>Do you set it up for us?</summary><p>No, it's self-setup. We deliver and collect (or you pick up). You inflate it with the included electric blower, anchor it, supervise the kids and pack it down. An adult must supervise whenever children are on or near the castle.</p></details>
+          <details class="faq-item"><summary>How big is it, and how much space do I need?</summary><p>The castle is about 4.3m × 4.5m × 3.0m inflated (roughly 14 × 14.9 × 10 ft). Allow about 5.5m × 5.5m of clear, flat ground. Indoors, you need a ceiling of 3.2m or more, so it suits lawns, patios and condo or hotel function rooms.</p></details>
+          <details class="faq-item"><summary>What power does it need?</summary><p>The blower plugs into a standard 13A power point. Make sure there's one within reach of where the castle will stand.</p></details>
+          <details class="faq-item"><summary>What happens if it rains?</summary><p>Don't inflate or use the castle in rain or strong wind, and pack it down dry. If the weather turns, contact us early and we'll try to rebook your date.</p></details>
+          <details class="faq-item"><summary>What's included?</summary><p>You get the all-white bounce house with side slide and full-width front ball pit, plus the electric blower. Ball-pit balls aren't included, so bring your own if you want the pit filled. On-site setup and staff aren't included either.</p></details>
+          <details class="faq-item"><summary>How do I book and pay?</summary><p>Pick an open date in the calendar below, fill in your details, then PayNow the total and submit. WhatsApp opens with your booking details. Send the message, and Yumi confirms on WhatsApp (<a href="https://wa.me/6582003847">+65 8200 3847</a>).</p></details>
         </div>
       </div>
     </section>
@@ -308,7 +478,7 @@
               </div>
               <div class="pay-row">
                 <div class="paynow">
-                  <img src="assets/paynow-qr.png?v=20261016a" alt="PayNow QR code" />
+                  <img src="assets/paynow-qr.png?v=20261018a" alt="PayNow QR code for paying the booking total" width="960" height="960" loading="lazy" decoding="async" />
                   <p class="paynow-cap">Scan with your banking app</p>
                 </div>
                 <div class="pay-side">
@@ -335,7 +505,7 @@
 
   <footer>
     <div class="wrap">
-      <strong>Sentosa Bouncy Castle Rental Co</strong><br />
+      <strong>Sentosa Bouncy Castle Rental Co</strong> · White bouncy castle rental in Sentosa &amp; Singapore<br />
       <span data-price="footerLine">Full day $129 · Free Sentosa delivery or self pick-up · $60 off-Sentosa delivery · Self-setup</span><br />
       WhatsApp <a href="https://wa.me/6582003847">+65 8200 3847</a>
     </div>
@@ -355,6 +525,6 @@
       location.hash = 'book';
     }
   </script>
-  <script src="prices.js?v=20261016a"></script>
+  <script src="prices.js?v=20261018a"></script>
 </body>
 </html>

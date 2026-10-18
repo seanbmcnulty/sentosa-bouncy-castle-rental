@@ -1,4 +1,5 @@
-/** Live list prices — single source of truth for the whole site. */
+/** Live list prices — single source of truth for the whole site. On a price change also update the static
+ *  SEO copies in index.html (title, meta/OG descriptions, JSON-LD): see "SEO PRICE NOTE" there. */
 window.SBCR_PRICES = {
   fullDay: 129,
   mainlandDelivery: 60,
@@ -78,6 +79,47 @@ window.SBCR_PRICES = {
       offOpt.value = "Elsewhere in Singapore — +" + money(p.mainlandDelivery) + " delivery & pickup";
       offOpt.textContent = offOpt.value;
     }
+  }
+
+  /**
+   * Keep the JSON-LD in index.html in step with SBCR_PRICES (crawlers that run JS see live prices).
+   * The static copies in index.html (<title>, meta descriptions, JSON-LD) still need a manual edit on a
+   * price change; see the "SEO PRICE NOTE" comment at the top of index.html.
+   */
+  function syncStructuredData() {
+    const p = window.SBCR_PRICES;
+    try {
+      const biz = document.getElementById("ld-business");
+      if (biz) {
+        const data = JSON.parse(biz.textContent);
+        (data["@graph"] || []).forEach(function (node) {
+          if (node["@type"] === "Service") {
+            if (node.offers) node.offers.price = String(p.fullDay);
+            if (node.description) {
+              node.description = node.description.replace(/an extra \$\d+/, "an extra " + money(p.mainlandDelivery));
+            }
+          }
+        });
+        biz.textContent = JSON.stringify(data);
+      }
+      const faq = document.getElementById("ld-faq");
+      const items = document.querySelectorAll("#faq .faq-item");
+      if (faq && items.length) {
+        faq.textContent = JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: Array.prototype.map.call(items, function (d) {
+            const q = d.querySelector("summary");
+            const a = d.querySelector("p");
+            return {
+              "@type": "Question",
+              name: (q ? q.textContent : "").trim(),
+              acceptedAnswer: { "@type": "Answer", text: (a ? a.textContent : "").replace(/\s+/g, " ").trim() }
+            };
+          })
+        });
+      }
+    } catch (e) {}
   }
 
   /** Which delivery option is picked: "sentosa", "pickup", "elsewhere" or "". */
@@ -448,6 +490,7 @@ window.SBCR_PRICES = {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       applyPrices();
+      syncStructuredData();
       wireBookingState();
       wireBookingForm();
       wireCalendar();
@@ -455,6 +498,7 @@ window.SBCR_PRICES = {
     });
   } else {
     applyPrices();
+    syncStructuredData();
     wireBookingState();
     wireBookingForm();
     wireCalendar();

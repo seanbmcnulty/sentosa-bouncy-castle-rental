@@ -1,0 +1,6 @@
+# Note: Google only reads robots.txt at the host root (seanbmcnulty.github.io/robots.txt),
+# so this file is informational for a project site. Submit the sitemap in Search Console.
+User-agent: *
+Allow: /
+
+Sitemap: https://seanbmcnulty.github.io/sentosa-bouncy-castle-rental/sitemap.xml

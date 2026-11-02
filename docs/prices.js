@@ -1,7 +1,7 @@
 /** Live list prices — single source of truth for the whole site. On a price change also update the static
  *  SEO copies in index.html (title, meta/OG descriptions, JSON-LD): see "SEO PRICE NOTE" there. */
 window.SBCR_PRICES = {
-  fullDay: 129,
+  fullDay: 159,
   mainlandDelivery: 60,
   extraDay: 89, // each extra consecutive day after the first full day (arranged on WhatsApp; form stays single-day)
   currency: "$",
